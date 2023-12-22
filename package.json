@@ -1,0 +1,23 @@
+{
+  "name": "neo-brutal-css",
+  "version": "0.0.1",
+  "description": "NeoBrutalism CSS Framework",
+  "files": [
+    "dist/final.css"
+  ],
+  "scripts": {
+    "serve": "npx serve",
+    "watch:sass": "sass --no-source-map --watch src/sass/main.scss:build/styles.css",
+    "compile:sass": "sass --no-source-map src/sass/main.scss:build/styles.css",
+    "bundle:css": "lightningcss --browserslist --minify --bundle build/styles.css --output-file dist/bundle.css",
+    "build": "npm run compile:sass && npm run bundle:css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Riximus",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "lightningcss": "^1.22.1",
+    "sass": "^1.69.5"
+  }
+}
