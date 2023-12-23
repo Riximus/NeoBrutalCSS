@@ -1,0 +1,53 @@
+/*
+* Big thanks to Sepideh Yazdi for the colors!
+* Link to her dribbble post: https://dribbble.com/shots/20764973-Neobrutalism-UI-How-to
+ */
+
+$neo-colors: (
+        "neo-blue": #7DF9FF,
+        "neo-green": #2FFF2F,
+        "neo-pink": #FF00F5,
+        "neo-purple": #3300FF,
+        "neo-yellow": #FFFF00,
+        "neo-orange": #FF4911,
+);
+
+$muted-colors: (
+        "muted-blue": (
+                "lightest": #DAF5F0,
+                "lighter": #A7DBD8,
+                "base": #87CEEB,
+                "darker": #69D2E7,
+        ),
+        "muted-green": (
+                "lightest": #B5D2AD,
+                "lighter": #BAFCA2,
+                "base": #90EE90,
+                "darker": #7FBC8C,
+        ),
+        "muted-yellow": (
+                "lightest": #FDFD96,
+                "lighter": #FFDB58,
+                "base": #F4D738,
+                "darker": #E3A018,
+        ),
+        "muted-orange": (
+                "lightest": #F8D6B3,
+                "lighter": #FFA07A,
+                "base": #FF7A5C,
+                "darker": #FF6B6B,
+        ),
+        "muted-pink": (
+                "lightest": #FCDFFF,
+                "lighter": #FFC0CB,
+                "base": #FFB2EF,
+                "darker": #FF69B4,
+        ),
+        "muted-purple": (
+                "lightest": #E3DFF2,
+                "lighter": #C4A1FF,
+                "base": #A388EE,
+                "darker": #9723C9,
+        )
+);
+
