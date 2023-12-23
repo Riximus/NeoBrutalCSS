@@ -1,0 +1,5 @@
+@mixin neobrutalism-border-shadow {
+  border: 3px solid #000;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 2px 4px 0 0 #000;
+}

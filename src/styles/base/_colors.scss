@@ -4,51 +4,96 @@
  */
 
 $neo-colors: (
-        "neo-blue": #7DF9FF,
-        "neo-green": #2FFF2F,
-        "neo-pink": #FF00F5,
-        "neo-purple": #3300FF,
-        "neo-yellow": #FFFF00,
-        "neo-orange": #FF4911,
+        "blue": #7DF9FF,
+        "green": #2FFF2F,
+        "pink": #FF00F5,
+        "purple": #3300FF,
+        "yellow": #FFFF00,
+        "orange": #FF4911,
+);
+
+$feedback-colors: (
+        "danger": #FF5454,
+        "warning": #FF8C00,
+        "success": #4CAF50,
+        "info": #17A2B8,
 );
 
 $muted-colors: (
-        "muted-blue": (
+        "blue": (
                 "lighter": #DAF5F0,
                 "light": #A7DBD8,
                 "base": #87CEEB,
                 "dark": #69D2E7,
         ),
-        "muted-green": (
+        "green": (
                 "lighter": #B5D2AD,
                 "light": #BAFCA2,
                 "base": #90EE90,
                 "dark": #7FBC8C,
         ),
-        "muted-yellow": (
-                "lighter": #FDFD96,
-                "light": #FFDB58,
-                "base": #F4D738,
-                "dark": #E3A018,
-        ),
-        "muted-orange": (
-                "lighter": #F8D6B3,
-                "light": #FFA07A,
-                "base": #FF7A5C,
-                "dark": #FF6B6B,
-        ),
-        "muted-pink": (
+        "pink": (
                 "lighter": #FCDFFF,
                 "light": #FFC0CB,
                 "base": #FFB2EF,
                 "dark": #FF69B4,
         ),
-        "muted-purple": (
+        "purple": (
                 "lighter": #E3DFF2,
                 "light": #C4A1FF,
                 "base": #A388EE,
                 "dark": #9723C9,
-        )
+        ),
+        "yellow": (
+                "lighter": #FDFD96,
+                "light": #FFDB58,
+                "base": #F4D738,
+                "dark": #E3A018,
+        ),
+        "orange": (
+                "lighter": #F8D6B3,
+                "light": #FFA07A,
+                "base": #FF7A5C,
+                "dark": #FF6B6B,
+        ),
 );
 
+$color-palette: (
+        "feedback": $feedback-colors,
+        "neo": $neo-colors,
+);
 
+@function set-text-color($color) {
+        // Calculate the YIQ value
+        $r: red($color);
+        $g: green($color);
+        $b: blue($color);
+        $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+        // Return black text for light backgrounds, white for dark
+        @if ($yiq > 128) {
+                @return #000; // Dark text for light backgrounds
+        } @else {
+                @return #FFF; // Light text for dark backgrounds
+        }
+}
+
+// Utility classes for neo and feedback colors
+@each $palette-name, $color-group in $color-palette {
+        @each $color-key, $color-value in $color-group {
+                .#{$palette-name}-#{$color-key} {
+                        background-color: $color-value !important;
+                        color: set-text-color($color-value); // Adjust text color for contrast
+                }
+        }
+}
+
+// Utility classes for muted colors
+@each $color-name, $shades in $muted-colors {
+        @each $shade-name, $color-value in $shades {
+                .muted-#{$color-name}-#{$shade-name} {
+                        background-color: $color-value !important;
+                        color: set-text-color($color-value); // Adjust text color for contrast
+                }
+        }
+}

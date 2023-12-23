@@ -1,0 +1,9 @@
+@use "../mixins";
+
+.neo-btn {
+    @include mixins.neobrutalism-border-shadow;
+    cursor: pointer;
+    outline: none;
+    padding: 0.5em 1em;
+    background-color: #FFF;
+}

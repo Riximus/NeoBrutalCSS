@@ -6,12 +6,15 @@
     "dist/final.css"
   ],
   "scripts": {
-    "serve": "npx serve",
     "watch:sass": "sass --no-source-map --watch src/styles/main.scss:build/styles.css",
     "compile:sass": "sass --no-source-map src/styles/main.scss:build/styles.css",
     "bundle:css": "lightningcss --browserslist --minify --bundle build/styles.css --output-file dist/bundle.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+
     "build": "npm run compile:sass && npm run bundle:css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "Riximus",
   "license": "ISC",
@@ -19,5 +22,17 @@
   "dependencies": {
     "lightningcss": "^1.22.1",
     "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/html": "^7.6.6",
+    "@storybook/html-vite": "^7.6.6",
+    "@storybook/test": "^7.6.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.6"
   }
 }
