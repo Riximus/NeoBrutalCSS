@@ -10,6 +10,11 @@ export default {
         },
         label: { control: 'text' },
         rounded: { control: 'boolean' },
+        shadow: { control: 'boolean' },
+        size: {
+            control: { type: 'select' },
+            options: ['Default', 'Small (S)', 'Big (L)', 'Bigger (XL)'],
+        },
     },
     render: (args) => {
         return createTestButton(args);
@@ -18,8 +23,14 @@ export default {
 
 export const Default = {
     args: {
-        colorClass: 'neo-green', // Default color class
         label: 'Button',
+    },
+};
+
+export const Colored = {
+    args: {
+        label: 'Colored Button',
+        colorClass: 'neo-orange',
     },
 };
 
@@ -27,5 +38,33 @@ export const Rounded = {
     args: {
         label: 'Rounded Button',
         rounded: true,
+    }
+}
+
+export const Shadow = {
+    args: {
+        label: 'Button with shadow',
+        shadow: true,
+    }
+}
+
+export const SmallS = {
+    args: {
+        label: 'Small Button',
+        size: 'Small (S)',
+    }
+}
+
+export const BigL = {
+    args: {
+        label: 'Big Button',
+        size: 'Big (L)',
+    }
+}
+
+export const BiggerXL = {
+    args: {
+        label: 'Bigger Button',
+        size: 'Bigger (XL)',
     }
 }

@@ -1,3 +1,18 @@
+@use "../mixins";
+
 .rounded {
-  border-radius: 15px;
+  border-radius: 10px;
+}
+
+/*
+  Shadow
+ */
+
+.shadow {
+  @include mixins.neobrutalism-shadow;
+}
+
+.shadow:hover {
+  // TODO: Add transition
+  box-shadow: none;
 }

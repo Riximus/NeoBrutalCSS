@@ -3,6 +3,8 @@
 * Link to her dribbble post: https://dribbble.com/shots/20764973-Neobrutalism-UI-How-to
  */
 
+@use "sass:math";
+
 $neo-colors: (
         "blue": #7DF9FF,
         "green": #2FFF2F,
@@ -68,7 +70,7 @@ $color-palette: (
         $r: red($color);
         $g: green($color);
         $b: blue($color);
-        $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+        $yiq: math.div(($r * 299) + ($g * 587) + ($b * 114), 1000);
 
         // Return black text for light backgrounds, white for dark
         @if ($yiq > 128) {
