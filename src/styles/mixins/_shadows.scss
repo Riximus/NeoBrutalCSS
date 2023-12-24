@@ -1,6 +1,14 @@
+@use "../base/variables";
+
+$x: map-get(variables.$box-shadow, "offset-x");
+$y: map-get(variables.$box-shadow, "offset-y");
+$blur: map-get(variables.$box-shadow, "blur");
+$spread: map-get(variables.$box-shadow, "spread");
+$color: map-get(variables.$box-shadow, "color");
+
 @mixin neobrutalism-shadow {
   /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 2px 4px 0 0 #000;
+  box-shadow: $x $y $blur $spread $color;
 }
 
 @mixin hover-shadow-effect {
@@ -19,3 +27,6 @@
   }
 }
 
+@mixin translate-box-shadow {
+  transform: translate(-$x, -$y) translate3d(0,0,0);
+}

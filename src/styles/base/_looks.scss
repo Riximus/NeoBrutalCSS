@@ -9,15 +9,10 @@
  */
 .shadow {
   @include shadows.neobrutalism-shadow;
-  transform: translate(-2px, -4px);
-}
-
-.shadow:hover {
-  // TODO: Add transition
-  box-shadow: none;
+  @include shadows.translate-box-shadow;
 }
 
 .shadow-fixed {
   @include shadows.neobrutalism-shadow;
-  transform: translate(-2px, -4px);
+  transform: translate(-2px, -4px) translate3d(0,0,0) !important;
 }
