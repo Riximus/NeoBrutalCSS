@@ -7,6 +7,7 @@ export const createTestButton = (
         rounded = false,
         shadow = false,
         size,
+        shadowFixed = false,
     }) => {
 
     const btn = document.createElement('button');
@@ -34,6 +35,7 @@ export const createTestButton = (
         ${colorClass} 
         ${rounded ? 'rounded' : ''}
         ${shadow ? 'shadow' : ''}
+        ${shadowFixed ? 'shadow-fixed' : ''}
         `;
 
     btn.innerText = label;

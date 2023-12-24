@@ -1,0 +1,21 @@
+@mixin neobrutalism-shadow {
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 2px 4px 0 0 #000;
+}
+
+@mixin hover-shadow-effect {
+  &:not(.shadow):hover {
+    @include neobrutalism-shadow;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+@mixin no-transform-shadow-hover {
+  &.shadow:hover, &.shadow-fixed:hover {
+    transform: none;
+  }
+}
+

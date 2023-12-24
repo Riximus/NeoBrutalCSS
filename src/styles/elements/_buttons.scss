@@ -1,17 +1,46 @@
-@use "../mixins";
+@use "../mixins/borders";
+@use "../mixins/shadows";
+@use "../base/looks";
 
 // TODO - Add transitions
+// TODO - Make corners a bit rounder (optional? with another class?)
 
 // Base button class
 button.neo-btn {
-    @include mixins.neobrutalism-border;
-    @include mixins.hover-shadow-effect;
+    @include borders.neobrutalism-border;
+
     cursor: pointer;
     outline: none;
     background-color: #FFF;
     padding: 0.5em 1em;
+
+    transition: 0.2s;
+
+    &:hover {
+        transform: translate(-2px, -4px);
+    }
+
+    &:active {
+        transform: translate(0);
+        box-shadow: none;
+    }
+
+    &:not(:active){
+        @include shadows.hover-shadow-effect;
+    }
+
+    &.shadow-fixed {
+        @include shadows.neobrutalism-shadow;
+        transform: none;
+    }
+
+    // Override for buttons with .shadow class
+    @include shadows.no-transform-shadow-hover
 }
 
+/*
+    Size variants
+*/
 // Small size variant
 button.neo-btn--s {
     @extend .neo-btn;

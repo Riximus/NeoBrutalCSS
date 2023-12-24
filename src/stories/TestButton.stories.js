@@ -11,6 +11,7 @@ export default {
         label: { control: 'text' },
         rounded: { control: 'boolean' },
         shadow: { control: 'boolean' },
+        shadowFixed: { control: 'boolean' },
         size: {
             control: { type: 'select' },
             options: ['Default', 'Small (S)', 'Big (L)', 'Bigger (XL)'],
@@ -45,6 +46,13 @@ export const Shadow = {
     args: {
         label: 'Button with shadow',
         shadow: true,
+    }
+}
+
+export const ShadowFixed = {
+    args: {
+        label: 'Button with fixed shadow',
+        shadowFixed: true,
     }
 }
 

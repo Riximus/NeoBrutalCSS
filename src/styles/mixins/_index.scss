@@ -1,14 +1,3 @@
-@mixin neobrutalism-border {
-  border: 3px solid #000;
-}
+@use "borders";
+@use "shadows";
 
-@mixin neobrutalism-shadow {
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 2px 4px 0 0 #000;
-}
-
-@mixin hover-shadow-effect {
-  &:not(.shadow):hover {
-    @include neobrutalism-shadow;
-  }
-}
