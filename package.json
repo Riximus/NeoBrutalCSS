@@ -1,28 +1,35 @@
 {
-  "name": "neo-brutal-css",
+  "name": "neobrutalcss",
   "version": "0.0.1",
-  "description": "NeoBrutalism CSS Framework",
+  "author": "Riximus",
+  "description": "A simple and flexible CSS framework for building modern websites in the Neobrutalist style.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Riximus/NeoBrutalCSS.git"
+  },
+  "bugs": "https://github.com/Riximus/NeoBrutalCSS/issues",
+  "keywords": [
+    "neobrutalism", "css-framework", "web-design", "modern-css", "neobrutal-css",
+    "ui-framework", "responsive-design", "web-development", "frontend", "styling",
+    "minimalist", "aesthetic", "creative-design", "brutalist", "custom-css", "css",
+    "neobrutalcss", "scss", "sass", "storybook", "neobrutalism", "brutalism", "colorful",
+    "flexible"
+  ],
+  "main": "dist/neobrutal.css",
   "files": [
-    "dist/final.css"
+    "dist/neobrutal.css"
   ],
   "scripts": {
-    "watch:sass": "sass --no-source-map --watch src/styles/main.scss:build/styles.css",
-    "compile:sass": "sass --no-source-map src/styles/main.scss:build/styles.css",
-    "bundle:css": "lightningcss --browserslist --minify --bundle build/styles.css --output-file dist/bundle.css",
+    "watch:sass": "sass --no-source-map --watch src/styles/main.scss:compiled/styles.css",
+    "compile:sass": "sass --no-source-map src/styles/main.scss:compiled/styles.css",
+    "bundle:css": "lightningcss --browserslist --minify --bundle compiled/styles.css --output-file dist/neobrutal.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "build": "npm run compile:sass && npm run bundle:css",
-
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook compiled"
   },
-  "author": "Riximus",
   "license": "ISC",
   "type": "module",
-  "dependencies": {
-    "lightningcss": "^1.22.1",
-    "sass": "^1.69.5"
-  },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-interactions": "^7.6.6",
@@ -31,8 +38,10 @@
     "@storybook/html": "^7.6.6",
     "@storybook/html-vite": "^7.6.6",
     "@storybook/test": "^7.6.6",
+    "lightningcss-cli": "^1.22.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sass": "^1.69.5",
     "storybook": "^7.6.6"
   }
 }

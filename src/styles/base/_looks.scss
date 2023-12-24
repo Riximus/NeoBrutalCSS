@@ -8,6 +8,8 @@
   Shadow
  */
 
+// TODO - Add possibility to have fixed shadow with no hover effect
+
 .shadow {
   @include mixins.neobrutalism-shadow;
 }

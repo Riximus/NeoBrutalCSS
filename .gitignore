@@ -82,7 +82,7 @@ fabric.properties
 *.scss.map
 
 /dist/
-/build/
+/compiled/
 
 .idea
 node_modules

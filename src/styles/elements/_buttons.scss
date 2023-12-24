@@ -1,5 +1,7 @@
 @use "../mixins";
 
+// TODO - Add transitions
+
 // Base button class
 button.neo-btn {
     @include mixins.neobrutalism-border;
