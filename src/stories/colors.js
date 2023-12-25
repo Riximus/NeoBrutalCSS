@@ -22,3 +22,21 @@ export const getAllColorClasses = () => {
     }
     return classes;
 };
+
+
+// Function to get only hover color classes
+export const getHoverColorClasses = () => {
+    let classes = [];
+    for (const [category, colors] of Object.entries(colorCategories)) {
+        colors.forEach(color => {
+            if (category === 'muted') {
+                shades.forEach(shade => {
+                    classes.push(`muted-${color}-${shade}-hover`);
+                });
+            } else {
+                classes.push(`${category}-${color}-hover`);
+            }
+        });
+    }
+    return classes;
+};

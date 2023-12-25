@@ -3,6 +3,7 @@ import '../../compiled/styles.css'; // Import your CSS framework
 export const createTestButton = (
     {
         colorClass,
+        hoverColorClass,
         label,
         rounded = false,
         shadow = false,
@@ -11,6 +12,11 @@ export const createTestButton = (
     }) => {
 
     const btn = document.createElement('button');
+
+    // Check if hoverColorClass has a value, if so, add it to the button's class list
+    /*if (hoverColorClass) {
+        btn.classList.add(hoverColorClass);
+    }*/
 
     let sizeClass;
     switch (size) {
@@ -32,7 +38,8 @@ export const createTestButton = (
         `
         neo-btn
         ${sizeClass}
-        ${colorClass} 
+        ${colorClass}
+        ${hoverColorClass}
         ${rounded ? 'rounded' : ''}
         ${shadow ? 'shadow' : ''}
         ${shadowFixed ? 'shadow-fixed' : ''}

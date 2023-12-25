@@ -99,3 +99,31 @@ $color-palette: (
                 }
         }
 }
+
+// TODO remove the transition from the hover classes
+
+// Generate hover utility classes for neo and feedback colors
+@each $palette-name, $color-group in $color-palette {
+        @each $color-key, $color-value in $color-group {
+                .#{$palette-name}-#{$color-key} {
+                        // ... existing styles ...
+                }
+                .#{$palette-name}-#{$color-key}-hover:hover {
+                        background-color: darken($color-value, 10%) !important; // Darken for hover effect
+                        color: set-text-color(darken($color-value, 10%)); // Adjust text color for contrast
+                }
+        }
+}
+
+// Generate hover utility classes for muted colors
+@each $color-name, $shades in $muted-colors {
+        @each $shade-name, $color-value in $shades {
+                .muted-#{$color-name}-#{$shade-name} {
+                        // ... existing styles ...
+                }
+                .muted-#{$color-name}-#{$shade-name}-hover:hover {
+                        background-color: darken($color-value, 10%) !important; // Darken for hover effect
+                        color: set-text-color(darken($color-value, 10%)); // Adjust text color for contrast
+                }
+        }
+}

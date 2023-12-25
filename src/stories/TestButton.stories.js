@@ -1,5 +1,5 @@
 import { createTestButton } from './TestButton';
-import { getAllColorClasses} from "./colors.js";
+import { getAllColorClasses, getHoverColorClasses} from "./colors.js";
 
 export default {
     title: 'Example/TestButton',
@@ -7,6 +7,10 @@ export default {
         colorClass: {
             control: { type: 'select' },
             options: getAllColorClasses(),
+        },
+        hoverColorClass: {
+            control: { type: 'select' },
+            options: getHoverColorClasses(),
         },
         label: { control: 'text' },
         rounded: { control: 'boolean' },
@@ -32,6 +36,13 @@ export const Colored = {
     args: {
         label: 'Colored Button',
         colorClass: 'neo-orange',
+    },
+};
+
+export const HoverColored = {
+    args: {
+        label: 'Hover Colored Button',
+        hoverColorClass: 'neo-blue-hover', // hover color
     },
 };
 
