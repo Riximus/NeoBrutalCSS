@@ -16,6 +16,7 @@ button.neo-btn {
 
     transition: 0.2s;
 
+    // TODO create a button with multiple box shadows for the hover effect. Maybe colorize it?
     &:hover {
         @include shadows.translate-box-shadow;
     }

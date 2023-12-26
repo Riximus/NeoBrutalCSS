@@ -83,6 +83,7 @@ fabric.properties
 
 /dist/
 /compiled/
+index.html
 
 .idea
 node_modules

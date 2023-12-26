@@ -1,4 +1,6 @@
 // Lexend Mega
+
+// TODO: add the rest of the font weights and styles
 @font-face {
   font-family: 'Lexend Mega';
   src: url('../../fonts/Lexend_Mega/static/LexendMega-Regular.ttf') format('truetype');
@@ -7,6 +9,7 @@
   font-display: swap;
 }
 
+// TODO: add the rest of the font weights and styles
 // Public Sans
 @font-face {
   font-family: 'Public Sans';
@@ -19,6 +22,22 @@
 body {
   font-family: 'Public Sans', sans-serif;
 }
+
+p {
+  font-size: 16px;
+}
+
+// TODO add: h1, h2, h3, h4, h5, h6
+// TODO add: caption class
+// TODO add: font weights and styles
+// TODO add: font sizes
+// TODO add: <a> styles
+// TODO add: <ul> and <ol> styles
+// TODO add: <blockquote> styles
+// TODO add: <code> styles
+// TODO add: <pre> styles
+// TODO add: <strong> and <em> styles
+// TODO add: <span> styles
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lexend Mega', sans-serif;
