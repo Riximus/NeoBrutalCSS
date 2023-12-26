@@ -72,13 +72,13 @@ $color-palette: (
  */
 @function relative-luminance($color) {
 
-        $r: red($color) / 255;
-        $g: green($color) / 255;
-        $b: blue($color) / 255;
+        $r: math.div(red($color), 255);
+        $g: math.div(green($color), 255);
+        $b: math.div(blue($color), 255);
 
-        $r: if($r < 0.03928, $r / 12.92, math.pow(($r + 0.055) / 1.055, 2.4));
-        $g: if($g < 0.03928, $g / 12.92, math.pow(($g + 0.055) / 1.055, 2.4));
-        $b: if($b < 0.03928, $b / 12.92, math.pow(($b + 0.055) / 1.055, 2.4));
+        $r: if($r < 0.03928, math.div($r, 12.92), math.pow(math.div($r + 0.055, 1.055), 2.4));
+        $g: if($g < 0.03928, math.div($g, 12.92), math.pow(math.div($g + 0.055, 1.055), 2.4));
+        $b: if($b < 0.03928, math.div($b, 12.92), math.pow(math.div($b + 0.055, 1.055), 2.4));
 
         @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
 }
@@ -87,7 +87,7 @@ $color-palette: (
         $l1: relative-luminance($background) + 0.05;
         $l2: relative-luminance($foreground) + 0.05;
 
-        @return if($l1 > $l2, $l1 / $l2, $l2 / $l1);
+        @return if($l1 > $l2, math.div($l1, $l2), math.div($l2, $l1));
 }
 
 @function set-text-color($background-color) {
