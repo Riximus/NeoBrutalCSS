@@ -84,6 +84,7 @@ fabric.properties
 /dist/
 /compiled/
 index.html
+TODO.md
 
 .idea
 node_modules

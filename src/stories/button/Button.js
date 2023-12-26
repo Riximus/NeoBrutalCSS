@@ -1,4 +1,4 @@
-import '../../compiled/styles.css'; // Import your CSS framework
+import '../../../compiled/styles.css';
 
 export const createTestButton = (
     {

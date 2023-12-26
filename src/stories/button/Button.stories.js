@@ -1,8 +1,8 @@
-import { createTestButton } from './TestButton';
-import { getAllColorClasses, getHoverColorClasses} from "./colors.js";
+import { createTestButton } from './Button.js';
+import { getAllColorClasses, getHoverColorClasses} from "../storybook-colors.js";
 
 export default {
-    title: 'Example/TestButton',
+    title: 'Elements/Button',
     argTypes: {
         colorClass: {
             control: { type: 'select' },

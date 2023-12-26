@@ -6,6 +6,7 @@
 @use "sass:math";
 
 $neo-colors: (
+        "white": #FFFFFF,
         "blue": #7DF9FF,
         "green": #2FFF2F,
         "pink": #FF00F5,
@@ -15,7 +16,7 @@ $neo-colors: (
 );
 
 $feedback-colors: (
-        "danger": #FF5454,
+        "danger": #C82333,
         "warning": #FF8C00,
         "success": #4CAF50,
         "info": #17A2B8,
@@ -65,39 +66,40 @@ $color-palette: (
         "neo": $neo-colors,
 );
 
-@function set-text-color($color) {
-        // Calculate the YIQ value
-        $r: red($color);
-        $g: green($color);
-        $b: blue($color);
-        $yiq: math.div(($r * 299) + ($g * 587) + ($b * 114), 1000);
+/*
+ Thank you @itzsrikanth for the color contrast functions!
+ Link to the article: https://hackernoon.com/how-to-generate-wcag-compliant-contrast-color-in-bootstrap-uiv310s
+ */
+@function relative-luminance($color) {
+        // Check if the color is a map and has a 'base' key. If not, use the color directly.
+        $color: if(type-of($color) == 'map' and map-has-key($color, 'base'), map-get($color, 'base'), $color);
 
-        // Return black text for light backgrounds, white for dark
-        @if ($yiq > 128) {
-                @return #000; // Dark text for light backgrounds
-        } @else {
-                @return #FFF; // Light text for dark backgrounds
-        }
+        $r: red($color) / 255;
+        $g: green($color) / 255;
+        $b: blue($color) / 255;
+
+        $r: if($r < 0.03928, $r / 12.92, math.pow(($r + 0.055) / 1.055, 2.4));
+        $g: if($g < 0.03928, $g / 12.92, math.pow(($g + 0.055) / 1.055, 2.4));
+        $b: if($b < 0.03928, $b / 12.92, math.pow(($b + 0.055) / 1.055, 2.4));
+
+        @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
 }
 
-// Utility classes for neo and feedback colors
-@each $palette-name, $color-group in $color-palette {
-        @each $color-key, $color-value in $color-group {
-                .#{$palette-name}-#{$color-key} {
-                        background-color: $color-value !important;
-                        color: set-text-color($color-value); // Adjust text color for contrast
-                }
-        }
+@function contrast-ratio($background, $foreground) {
+        $l1: relative-luminance($background) + 0.05;
+        $l2: relative-luminance($foreground) + 0.05;
+
+        @return if($l1 > $l2, $l1 / $l2, $l2 / $l1);
 }
 
-// Utility classes for muted colors
-@each $color-name, $shades in $muted-colors {
-        @each $shade-name, $color-value in $shades {
-                .muted-#{$color-name}-#{$shade-name} {
-                        background-color: $color-value !important;
-                        color: set-text-color($color-value); // Adjust text color for contrast
-                }
-        }
+@function set-text-color($background-color) {
+        $black: #000000;
+        $white: #ffffff;
+
+        $black-contrast: contrast-ratio($background-color, $black);
+        $white-contrast: contrast-ratio($background-color, $white);
+
+        @return if($white-contrast > $black-contrast, $white, $black);
 }
 
 // TODO remove the transition from the hover classes
@@ -105,11 +107,16 @@ $color-palette: (
 // Generate hover utility classes for neo and feedback colors
 @each $palette-name, $color-group in $color-palette {
         @each $color-key, $color-value in $color-group {
+
+                // Color classes for each color
                 .#{$palette-name}-#{$color-key} {
-                        // ... existing styles ...
+                        background-color: $color-value !important;
+                        color: set-text-color($color-value); // Adjust text color for contrast
                 }
+
+                // Hover color classes for each color
                 .#{$palette-name}-#{$color-key}-hover:hover {
-                        background-color: darken($color-value, 10%) !important; // Darken for hover effect
+                        background-color: $color-value !important;
                         color: set-text-color(darken($color-value, 10%)); // Adjust text color for contrast
                 }
         }
@@ -118,11 +125,16 @@ $color-palette: (
 // Generate hover utility classes for muted colors
 @each $color-name, $shades in $muted-colors {
         @each $shade-name, $color-value in $shades {
+
+                // Muted color classes for each color
                 .muted-#{$color-name}-#{$shade-name} {
-                        // ... existing styles ...
+                        background-color: $color-value !important;
+                        color: set-text-color($color-value); // Adjust text color for contrast
                 }
+
+                // Hover color classes for each color
                 .muted-#{$color-name}-#{$shade-name}-hover:hover {
-                        background-color: darken($color-value, 10%) !important; // Darken for hover effect
+                        background-color: $color-value !important;
                         color: set-text-color(darken($color-value, 10%)); // Adjust text color for contrast
                 }
         }

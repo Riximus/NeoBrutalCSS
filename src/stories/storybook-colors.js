@@ -1,10 +1,10 @@
-const basicColors = ['blue', 'green', 'pink', 'purple', 'yellow', 'orange'];
+const basicColors = ['blue', 'green', 'pink', 'purple', 'yellow', 'orange', 'white'];
 const shades = ['lighter', 'light', 'base', 'dark'];
 
 const colorCategories = {
     neo: basicColors,
     feedback: ['danger', 'warning', 'success', 'info'],
-    muted: basicColors // Muted colors will have shades
+    muted: basicColors.filter(color => color !== 'white') // Muted colors will have shades
 };
 
 export const getAllColorClasses = () => {
