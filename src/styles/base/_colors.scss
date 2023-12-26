@@ -71,8 +71,6 @@ $color-palette: (
  Link to the article: https://hackernoon.com/how-to-generate-wcag-compliant-contrast-color-in-bootstrap-uiv310s
  */
 @function relative-luminance($color) {
-        // Check if the color is a map and has a 'base' key. If not, use the color directly.
-        $color: if(type-of($color) == 'map' and map-has-key($color, 'base'), map-get($color, 'base'), $color);
 
         $r: red($color) / 255;
         $g: green($color) / 255;
