@@ -1,7 +1,11 @@
+@use "colors";
+
+$black: colors.$black;
+
 $box-shadow: (
   "offset-x": 2px,
   "offset-y": 4px,
   "blur": 0,
   "spread": 0,
-  "color": #000,
+  "color": $black,
 );

@@ -1,10 +1,10 @@
 // Colors.stories.js
-import { getAllColorClasses } from '../storybook-colors.js';
+import { getAllColorClasses } from '../../storybook-colors.js';
 import { renderColorBlocks } from "./Colors.js";
-import '../../../compiled/styles.css';
 
 export default {
     title: 'Foundation/Colors',
+    tags: ['autodocs'],
 };
 
 // Extract only non-hover classes for each category

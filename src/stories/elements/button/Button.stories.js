@@ -1,8 +1,9 @@
 import { createTestButton } from './Button.js';
-import { getAllColorClasses, getHoverColorClasses} from "../storybook-colors.js";
+import { getAllColorClasses, getHoverColorClasses} from "../../storybook-colors.js";
 
 export default {
     title: 'Elements/Button',
+    tags: ['autodocs'],
     argTypes: {
         colorClass: {
             control: { type: 'select' },
@@ -13,7 +14,10 @@ export default {
             options: getHoverColorClasses(),
         },
         label: { control: 'text' },
-        rounded: { control: 'boolean' },
+        borderRadius: {
+            control: { type: 'select' },
+            options: ['none', 'rounded', 'rounded-corners'],
+        },
         shadow: { control: 'boolean' },
         shadowFixed: { control: 'boolean' },
         size: {
@@ -49,9 +53,16 @@ export const HoverColored = {
 export const Rounded = {
     args: {
         label: 'Rounded Button',
-        rounded: true,
+        borderRadius: 'rounded',
     }
-}
+};
+
+export const RoundedCorners = {
+    args: {
+        label: 'Rounded Corners Button',
+        borderRadius: 'rounded-corners',
+    }
+};
 
 export const Shadow = {
     args: {

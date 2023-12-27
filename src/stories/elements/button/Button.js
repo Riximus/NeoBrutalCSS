@@ -1,11 +1,11 @@
-import '../../../compiled/styles.css';
+import '../../../../compiled/styles.css';
 
 export const createTestButton = (
     {
         colorClass,
         hoverColorClass,
         label,
-        rounded = false,
+        borderRadius,
         shadow = false,
         size,
         shadowFixed = false,
@@ -33,17 +33,18 @@ export const createTestButton = (
             sizeClass = ''; // Default size (Medium)
     }
 
+    // Construct the class name string
+     // Filter out any falsey values and join
     // Setting the class name of the button element
-    btn.className =
-        `
-        neo-btn
-        ${sizeClass}
-        ${colorClass}
-        ${hoverColorClass}
-        ${rounded ? 'rounded' : ''}
-        ${shadow ? 'shadow' : ''}
-        ${shadowFixed ? 'shadow-fixed' : ''}
-        `;
+    btn.className = [
+        'neo-btn',
+        sizeClass,
+        colorClass,
+        hoverColorClass,
+        borderRadius,
+        shadow ? 'shadow' : '',
+        shadowFixed ? 'shadow-fixed' : ''
+    ].filter(Boolean).join(' ');
 
     btn.innerText = label;
     return btn;

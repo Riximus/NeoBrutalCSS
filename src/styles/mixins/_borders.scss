@@ -1,3 +1,7 @@
+@use "../base/colors";
+
+$black: colors.$black;
+
 @mixin neobrutalism-border {
-  border: 3px solid #000;
+  border: 3px solid $black;
 }

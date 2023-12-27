@@ -10,6 +10,7 @@ const config = {
     name: "@storybook/html-vite",
     options: {},
   },
+  staticDirs: [], // TODO: Add static directory for images
   docs: {
     autodocs: "tag",
   },

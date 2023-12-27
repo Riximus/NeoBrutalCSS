@@ -1,6 +1,8 @@
 @use "../mixins/borders";
 @use "../mixins/shadows";
-@use "../base/looks";
+@use "../base/colors";
+
+$white: map-get(colors.$neo-colors, "white");
 
 // TODO - Add transitions
 // TODO - Make corners a bit rounder (optional? with another class?)
@@ -8,10 +10,11 @@
 // Base button class
 button.neo-btn {
     @include borders.neobrutalism-border;
+    @include shadows.no-transform-shadow-hover;
 
     cursor: pointer;
     outline: none;
-    background-color: #FFF;
+    background-color: $white;
     padding: 0.5em 1em;
     font-weight: bold;
 
@@ -36,8 +39,8 @@ button.neo-btn {
     &.shadow-fixed {
         @include shadows.neobrutalism-shadow;
     }
+    //
 
-    @include shadows.no-transform-shadow-hover
 }
 
 /*
@@ -46,7 +49,7 @@ button.neo-btn {
 // Small size variant
 button.neo-btn--s {
     @extend .neo-btn;
-    padding: 0.3em 0.75em;
+    padding: 0.4em 0.75em;
     font-size: 0.9em;
 }
 
