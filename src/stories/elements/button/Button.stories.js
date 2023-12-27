@@ -1,4 +1,4 @@
-import { createTestButton } from './Button.js';
+import { createButton } from './Button.js';
 import { getAllColorClasses, getHoverColorClasses} from "../../storybook-colors.js";
 
 export default {
@@ -26,7 +26,7 @@ export default {
         },
     },
     render: (args) => {
-        return createTestButton(args);
+        return createButton(args);
     },
 };
 

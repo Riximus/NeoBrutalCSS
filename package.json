@@ -1,6 +1,6 @@
 {
   "name": "neobrutalcss",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "Riximus",
   "description": "A simple and flexible CSS framework for building modern websites in the Neobrutalist style.",
   "repository": {
@@ -51,6 +51,7 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.6.6",
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-interactions": "^7.6.6",
     "@storybook/addon-links": "^7.6.6",
