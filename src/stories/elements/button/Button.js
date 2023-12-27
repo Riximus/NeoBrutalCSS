@@ -1,6 +1,6 @@
 import '../../../../compiled/styles.css';
 
-export const createTestButton = (
+export const createButton = (
     {
         colorClass,
         hoverColorClass,
