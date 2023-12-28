@@ -1,9 +1,11 @@
 @use "../mixins/borders";
 @use "../mixins/shadows";
+@use "../mixins/animations";
 @use "../base/colors";
 
 $white: map-get(colors.$neo-colors, "white");
 $black: colors.$black;
+$error: map-get(colors.$feedback-colors, "danger");
 
 // Base text input class in neobrutalist style
 input[type="text"].neo-input-text,
@@ -15,8 +17,8 @@ input[type="email"].neo-input-text {
 
   @include borders.neobrutalism-border;
   @include shadows.no-transform-shadow-hover;
+  @include animations.transition-time;
 
-  transition: 0.2s;
   padding: 0.5em 0.6em;
   outline: none;
 
@@ -59,7 +61,7 @@ input[type="email"].neo-input-text {
   }
 
   &.error {
-    // TODO error state?
+    border-color: $error;
   }
 
   // Optional: Define variants for different sizes if needed

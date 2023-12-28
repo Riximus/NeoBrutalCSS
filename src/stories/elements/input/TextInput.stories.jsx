@@ -80,14 +80,13 @@ export const Disabled = {
         disabled: true,
     },
 };
-/*
-export const ErrorState = {
+
+export const Error = {
     args: {
         placeholder: 'Input with Error',
         error: true,
     },
 };
- */
 
 export const Small = {
     args: {

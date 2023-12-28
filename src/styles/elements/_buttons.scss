@@ -1,5 +1,6 @@
 @use "../mixins/borders";
 @use "../mixins/shadows";
+@use "../mixins/animations";
 @use "../base/colors";
 
 $white: map-get(colors.$neo-colors, "white");
@@ -11,14 +12,13 @@ $white: map-get(colors.$neo-colors, "white");
 button.neo-btn {
     @include borders.neobrutalism-border;
     @include shadows.no-transform-shadow-hover;
+    @include animations.transition-time;
 
     cursor: pointer;
     outline: none;
     background-color: $white;
     padding: 0.5em 1em;
     font-weight: bold;
-
-    transition: 0.2s;
 
     // TODO create a button with multiple box shadows for the hover effect. Maybe colorize it?
     &:hover {

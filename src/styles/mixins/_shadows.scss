@@ -1,4 +1,7 @@
 @use "../base/variables";
+@use "../base/colors";
+
+$error: map-get(colors.$feedback-colors, "danger");
 
 $x: map-get(variables.$box-shadow, "offset-x");
 $y: map-get(variables.$box-shadow, "offset-y");
@@ -9,6 +12,10 @@ $color: map-get(variables.$box-shadow, "color");
 @mixin neobrutalism-shadow {
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: $x $y $blur $spread $color;
+
+  &.error {
+    box-shadow: $x $y $blur $spread $error;
+  }
 }
 
 @mixin hover-shadow-effect {
