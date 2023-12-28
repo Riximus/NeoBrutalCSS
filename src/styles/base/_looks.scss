@@ -1,4 +1,8 @@
 @use "../mixins/shadows";
+@use "../base/variables";
+
+$x: map-get(variables.$box-shadow, "offset-x");
+$y: map-get(variables.$box-shadow, "offset-y");
 
 .rounded {
   border-radius: 20px;
@@ -18,5 +22,5 @@
 
 .shadow-fixed {
   @include shadows.neobrutalism-shadow;
-  transform: translate(-2px, -4px) translate3d(0,0,0) !important;
+  transform: translate(-$x, -$y) translate3d(0,0,0) !important;
 }

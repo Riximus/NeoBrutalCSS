@@ -347,3 +347,11 @@ template {
 [hidden] {
   display: none;
 }
+
+/* Custom styles
+   ========================================================================== */
+h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,button,input,textarea,select {
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-filter: blur(0);
+}
