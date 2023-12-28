@@ -24,3 +24,12 @@ $y: map-get(variables.$box-shadow, "offset-y");
   @include shadows.neobrutalism-shadow;
   transform: translate(-$x, -$y) translate3d(0,0,0) !important;
 }
+
+.disabled, *:disabled {
+  background-color: #e9ecef !important;
+  color: #6c757d;
+  cursor: not-allowed !important;
+  // add strike-through
+  text-decoration-line: line-through;
+  text-decoration-thickness: 3px;
+}

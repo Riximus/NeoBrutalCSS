@@ -14,12 +14,12 @@ export const createTextInput = ({
     input.placeholder = placeholder;
     input.disabled = disabled;
 
-    // Class name assignment
     // Construct the class name string
-     // Filter out any falsey values and join
+    // Filter out any falsey values and join
     input.className = [
         'neo-input-text',
         error ? 'error' : '',
+        disabled ? 'disabled' : '',
         size ? `neo-input-text--${size}` : '',
         shadow ? 'shadow' : '',
         shadowFixed ? 'shadow-fixed' : '',

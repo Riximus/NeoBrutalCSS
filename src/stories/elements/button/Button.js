@@ -9,14 +9,9 @@ export const createButton = (
         shadow = false,
         size,
         shadowFixed = false,
+        disabled = false,
     }) => {
-
     const btn = document.createElement('button');
-
-    // Check if hoverColorClass has a value, if so, add it to the button's class list
-    /*if (hoverColorClass) {
-        btn.classList.add(hoverColorClass);
-    }*/
 
     let sizeClass;
     switch (size) {
@@ -33,8 +28,7 @@ export const createButton = (
             sizeClass = ''; // Default size (Medium)
     }
 
-    // Construct the class name string
-     // Filter out any falsey values and join
+    // Filter out any falsey values and join
     // Setting the class name of the button element
     btn.className = [
         'neo-btn',
@@ -43,11 +37,11 @@ export const createButton = (
         hoverColorClass,
         borderRadius,
         shadow ? 'shadow' : '',
-        shadowFixed ? 'shadow-fixed' : ''
+        shadowFixed ? 'shadow-fixed' : '',
+        disabled ? 'disabled' : '',
     ].filter(Boolean).join(' ');
 
     btn.innerText = label;
     return btn;
-
 };
 

@@ -5,6 +5,7 @@ export default {
     title: 'Elements/Button',
     tags: ['autodocs'],
     argTypes: {
+        label: { control: 'text' },
         colorClass: {
             control: { type: 'select' },
             options: getAllColorClasses(),
@@ -13,7 +14,6 @@ export default {
             control: { type: 'select' },
             options: getHoverColorClasses(),
         },
-        label: { control: 'text' },
         borderRadius: {
             control: { type: 'select' },
             options: ['none', 'rounded', 'rounded-corners'],
@@ -24,6 +24,7 @@ export default {
             control: { type: 'select' },
             options: ['Default', 'Small (S)', 'Big (L)', 'Bigger (XL)'],
         },
+        disabled: { control: 'boolean' },
     },
     render: (args) => {
         return createButton(args);
@@ -75,6 +76,13 @@ export const ShadowFixed = {
     args: {
         label: 'Button with fixed shadow',
         shadowFixed: true,
+    }
+}
+
+export const Disabled = {
+    args: {
+        label: 'Disabled Button',
+        disabled: true,
     }
 }
 

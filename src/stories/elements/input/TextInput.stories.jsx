@@ -1,8 +1,26 @@
 import { createTextInput } from './TextInput.js';
+import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks'
+import * as React from 'react';
 
 export default {
     title: 'Elements/Inputs/Text Input',
     tags: ['autodocs'],
+    parameters: {
+        docs: {
+            page: () => (
+                <>
+                    <Title/>
+                    <Subtitle></Subtitle>
+                    <Description>
+                        The **.neo-input-text** class is designed for styling text-based input fields like text, search, number, password, email, and telephone.
+                    </Description>
+                    <Primary />
+                    <Controls />
+                    <Stories />
+                </>
+            ),
+        }
+    },
     argTypes: {
         placeholder: { control: 'text' },
         disabled: { control: 'boolean' },
@@ -55,14 +73,14 @@ export const RoundedCorners = {
     },
 };
 
-/*
+
 export const Disabled = {
     args: {
         placeholder: 'Disabled Input',
         disabled: true,
     },
 };
-
+/*
 export const ErrorState = {
     args: {
         placeholder: 'Input with Error',
