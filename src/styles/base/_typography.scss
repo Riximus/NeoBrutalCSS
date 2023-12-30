@@ -1,0 +1,90 @@
+h1,h2,h3,h4,h5,h6,p,span,div,ul,li,ol,button,input,textarea,select {
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-filter: blur(0);
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+// Define a map of font weights
+$font-weights: (
+        'thin': 100,
+        'light': 200,
+        'extra-light': 300,
+        'medium': 500,
+        'semi-bold': 600,
+        'bold': 700,
+        'extra-bold': 800,
+        'black': 900
+);
+
+// Loop to generate header classes
+@each $name, $weight in $font-weights {
+  .neo-header--#{$name} {
+    font-weight: $weight;
+  }
+}
+
+// Loop to generate text classes with italic variations
+@each $name, $weight in $font-weights {
+  .neo-text--#{$name} {
+    font-weight: $weight;
+  }
+  .neo-text--#{$name}-italic {
+    font-weight: $weight;
+    font-style: italic;
+  }
+}
+
+// Additional rules for regular and regular italic
+.neo-text--italic {
+  font-style: italic;
+  font-weight: 400; // Default weight for italic
+}
+
+
+
+// TODO add: h1, h2, h3, h4, h5, h6
+// TODO add: caption class
+// TODO add: font weights and styles
+// TODO add: font sizes
+// TODO add: <a> styles
+// TODO add: <ul> and <ol> styles
+// TODO add: <blockquote> styles
+// TODO add: <code> styles
+// TODO add: <pre> styles
+// TODO add: <strong> and <em> styles
+// TODO add: <span> styles

@@ -12,7 +12,8 @@ export default {
                     <Title/>
                     <Subtitle></Subtitle>
                     <Description>
-                        The **.neo-input-text** class is designed for styling text-based input fields like text, search, number, password, email, and telephone.
+                        The **.neo-input-text** class is designed for styling text-based input fields like text, search,
+                        number, password, email, and telephone.
                     </Description>
                     <Primary />
                     <Controls />
