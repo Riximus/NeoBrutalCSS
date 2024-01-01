@@ -1,0 +1,40 @@
+input.neo-checkbox {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+  &:checked {
+    background-color: #007bff;
+    color: #fff;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: inherit;
+      text-align: center;
+    }
+  }
+
+  &:focus {
+    // TODO: Add focus styles
+  }
+}
+
+
+.neo-checkbox-cross {
+
+}
+
+.neo-checkbox-square {
+
+}
