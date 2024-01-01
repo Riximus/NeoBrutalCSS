@@ -6,8 +6,8 @@ export const createButton = (
         hoverColorClass,
         label,
         borderRadius,
-        shadow = false,
         size,
+        shadow = false,
         shadowFixed = false,
         disabled = false,
     }) => {
@@ -32,10 +32,10 @@ export const createButton = (
     // Setting the class name of the button element
     btn.className = [
         'neo-btn',
-        sizeClass,
         colorClass,
         hoverColorClass,
         borderRadius,
+        sizeClass,
         shadow ? 'shadow' : '',
         shadowFixed ? 'shadow-fixed' : '',
         disabled ? 'disabled' : '',
