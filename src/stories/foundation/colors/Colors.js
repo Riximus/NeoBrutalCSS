@@ -1,6 +1,3 @@
-// storybook-helpers.js
-// This file will contain helper functions that can be used across different Storybook stories
-
 // Helper function to create a display for each color class
 const createColorBlock = (className) => {
     const wrapper = document.createElement('div');
