@@ -111,13 +111,19 @@ $color-palette: (
                 // Color classes for each color
                 .#{$palette-name}-#{$color-key} {
                         background-color: $color-value !important;
-                        color: set-text-color($color-value); // Adjust text color for contrast
+                        color: set-text-color($color-value);
                 }
 
                 // Hover color classes for each color
                 .#{$palette-name}-#{$color-key}-hover:hover {
                         background-color: $color-value !important;
-                        color: set-text-color(darken($color-value, 10%)); // Adjust text color for contrast
+                        color: set-text-color($color-value);
+                }
+
+                // Checked color classes for each color
+                .#{$palette-name}-#{$color-key}-checked:checked {
+                        background-color: $color-value !important;
+                        color: set-text-color($color-value) !important;
                 }
         }
 }
@@ -129,13 +135,19 @@ $color-palette: (
                 // Muted color classes for each color
                 .muted-#{$color-name}-#{$shade-name} {
                         background-color: $color-value !important;
-                        color: set-text-color($color-value); // Adjust text color for contrast
+                        color: set-text-color($color-value);
                 }
 
                 // Hover color classes for each color
                 .muted-#{$color-name}-#{$shade-name}-hover:hover {
                         background-color: $color-value !important;
-                        color: set-text-color(darken($color-value, 10%)); // Adjust text color for contrast
+                        color: set-text-color($color-value);
+                }
+
+                // Checked color classes for each color
+                .muted-#{$color-name}-#{$shade-name}-checked:checked {
+                        background-color: $color-value !important;
+                        color: set-text-color($color-value) !important;
                 }
         }
 }

@@ -1,10 +1,17 @@
+@use "../mixins/borders";
+@use "../mixins/shadows";
+@use "../mixins/animations";
+@use "../base/colors";
+
 input.neo-checkbox {
+  @include borders.neobrutalism-border;
+  @include shadows.no-transform-shadow-hover;
+  @include animations.transition-time;
+
   appearance: none;
   width: 25px;
   height: 25px;
   background-color: #fff;
-  border: 2px solid black;
-  border-radius: 4px;
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -14,14 +21,15 @@ input.neo-checkbox {
     color: #fff;
 
     &::before {
-      content: "✓";
+      content: '';
       position: absolute;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 18px;
-      color: inherit;
-      text-align: center;
+      top: 40%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-bottom: 3px solid #fff;
+      border-right: 3px solid #fff;
+      width: 8px;
+      height: 14px;
     }
   }
 

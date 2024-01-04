@@ -40,3 +40,19 @@ export const getHoverColorClasses = () => {
     }
     return classes;
 };
+
+export const getCheckedColorClasses = () => {
+    let classes = [];
+    for (const [category, colors] of Object.entries(colorCategories)) {
+        colors.forEach(color => {
+            if (category === 'muted') {
+                shades.forEach(shade => {
+                    classes.push(`muted-${color}-${shade}-checked`);
+                });
+            } else {
+                classes.push(`${category}-${color}-checked`);
+            }
+        });
+    }
+    return classes;
+}

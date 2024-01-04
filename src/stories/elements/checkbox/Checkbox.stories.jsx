@@ -1,6 +1,7 @@
 import { createCheckbox } from './Checkbox.js';
 import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
 import * as React from 'react';
+import {getAllColorClasses, getCheckedColorClasses} from "../../storybook-colors.js";
 
 export default {
     title: 'Elements/Checkbox',
@@ -30,6 +31,10 @@ export default {
         value: { control: 'text' },
         checked: { control: 'boolean' },
         disabled: { control: 'boolean' },
+        checkedColorClass: {
+            control: { type: 'select' },
+            options: getCheckedColorClasses(),
+        }
         // Add other customizations as needed
     },
     render: (args) => createCheckbox(args),
@@ -42,6 +47,7 @@ export const Default = {
         value: 'default',
         checked: false,
         disabled: false,
+        checkedColorClass: 'default',
     },
 };
 
