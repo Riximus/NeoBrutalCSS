@@ -4,5 +4,3 @@
 [![SASS](https://img.shields.io/badge/SASS-bf4080)](https://sass-lang.com/)
 
 # NeoBrutalism CSS
-
-Tools used to create the NeoBrutalism CSS framework:
