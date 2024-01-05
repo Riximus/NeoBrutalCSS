@@ -3,6 +3,9 @@
 @use "../mixins/animations";
 @use "../base/colors";
 
+$white: map-get(colors.$neo-colors, "white");
+$black: colors.$black;
+
 input.neo-checkbox {
   @include borders.neobrutalism-border;
   @include shadows.no-transform-shadow-hover;
@@ -11,26 +14,49 @@ input.neo-checkbox {
   appearance: none;
   width: 25px;
   height: 25px;
-  background-color: #fff;
+  background-color: $white;
   cursor: pointer;
   position: relative;
   display: inline-block;
 
   &:checked {
-    background-color: #007bff;
-    color: #fff;
-
     &::before {
       content: '';
       position: absolute;
       left: 50%;
       top: 40%;
       transform: translate(-50%, -50%) rotate(45deg);
-      border-bottom: 3px solid #fff;
-      border-right: 3px solid #fff;
+      border-bottom: 3px solid $black;
+      border-right: 3px solid $black;
       width: 8px;
       height: 14px;
     }
+  }
+
+  &:hover {
+    @include shadows.translate-box-shadow;
+  }
+
+  // TODO maybe make this a mixin?
+  // TODO maybe make all of them below mixins???
+
+  // TODO fix the checkbox behaving weirdly when clicked
+  &:checked {
+    transform: translate(0) translate3d(0,0,0);
+    box-shadow: none !important;
+    background-color: deeppink;
+  }
+
+  :active {
+    transform: translate(0) translate3d(0,0,0);
+  }
+
+  &:not(:active){
+    @include shadows.hover-shadow-effect;
+  }
+
+  &.shadow-fixed {
+    @include shadows.neobrutalism-shadow;
   }
 
   &:focus {

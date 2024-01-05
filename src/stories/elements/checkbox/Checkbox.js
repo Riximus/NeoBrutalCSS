@@ -6,6 +6,8 @@ export const createCheckbox = (
         checked,
         disabled,
         checkedColorClass,
+        colorClass,
+        hoverColorClass,
     }
 ) => {
     const checkbox = document.createElement('input');
@@ -18,6 +20,8 @@ export const createCheckbox = (
     checkbox.className = [
         'neo-checkbox',
         checkedColorClass,
+        colorClass,
+        hoverColorClass,
     ].filter(Boolean).join(' ');
 
     return checkbox;

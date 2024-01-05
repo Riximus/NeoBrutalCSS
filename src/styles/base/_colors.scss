@@ -123,7 +123,10 @@ $color-palette: (
                 // Checked color classes for each color
                 .#{$palette-name}-#{$color-key}-checked:checked {
                         background-color: $color-value !important;
-                        color: set-text-color($color-value) !important;
+                        &::before {
+                                border-bottom-color: set-text-color($color-value) !important;
+                                border-right-color: set-text-color($color-value) !important;
+                        }
                 }
         }
 }
@@ -147,7 +150,10 @@ $color-palette: (
                 // Checked color classes for each color
                 .muted-#{$color-name}-#{$shade-name}-checked:checked {
                         background-color: $color-value !important;
-                        color: set-text-color($color-value) !important;
+                        &::before {
+                                border-bottom-color: set-text-color($color-value);
+                                border-right-color: set-text-color($color-value);
+                        }
                 }
         }
 }
