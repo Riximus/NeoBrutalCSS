@@ -1,0 +1,104 @@
+import {Meta} from '@storybook/blocks';
+import {ColorPalette, ColorItem} from "@storybook/blocks";
+
+
+<Meta title="Foundation/Colors" />
+
+<ColorPalette>
+    {/* TODO: Find a way to load the color hex value directly from the sass file */}
+
+    {/* Neo Colors */}
+    <ColorItem
+        title="Neo Colors"
+        subtitle="Vibrant and Bold"
+        colors={{
+            White: '#FFFFFF',
+            Blue: '#7DF9FF',
+            Green: '#2FFF2F',
+            Pink: '#FF00F5',
+            Purple: '#3300FF',
+            Yellow: '#FFFF00',
+            Orange: '#FF4911',
+        }}
+    />
+
+    {/* Feedback Colors */}
+    <ColorItem
+        title="Feedback Colors"
+        subtitle="User Interaction Indicators"
+        colors={{
+            Danger: '#C82333',
+            Warning: '#FF8C00',
+            Success: '#4CAF50',
+            Info: '#17A2B8',
+        }}
+    />
+
+    {/* Muted Colors - Each color in its own item for clarity */}
+    <ColorItem
+        title="Muted Blue"
+        subtitle="Variations of Blue"
+        colors={{
+            Lighter: '#DAF5F0',
+            Light: '#A7DBD8',
+            Base: '#87CEEB',
+            Dark: '#69D2E7',
+        }}
+    />
+
+    <ColorItem
+        title="Muted Green"
+        subtitle="Variations of Green"
+        colors={{
+            Lighter: '#B5D2AD',
+            Light: '#BAFCA2',
+            Base: '#90EE90',
+            Dark: '#7FBC8C',
+        }}
+    />
+
+    <ColorItem
+        title="Muted Pink"
+        subtitle="Variations of Pink"
+        colors={{
+            Lighter: '#FCDFFF',
+            Light: '#FFC0CB',
+            Base: '#FFB2EF',
+            Dark: '#FF69B4',
+        }}
+    />
+
+    <ColorItem
+        title="Muted Purple"
+        subtitle="Variations of Purple"
+        colors={{
+            Lighter: '#E3DFF2',
+            Light: '#C4A1FF',
+            Base: '#A388EE',
+            Dark: '#9723C9',
+        }}
+    />
+
+    <ColorItem
+        title="Muted Yellow"
+        subtitle="Variations of Yellow"
+        colors={{
+            Lighter: '#FDFD96',
+            Light: '#FFDB58',
+            Base: '#F4D738',
+            Dark: '#E3A018',
+        }}
+    />
+
+    <ColorItem
+        title="Muted Orange"
+        subtitle="Variations of Orange"
+        colors={{
+            Lighter: '#F8D6B3',
+            Light: '#FFA07A',
+            Base: '#FF7A5C',
+            Dark: '#FF6B6B',
+        }}
+    />
+
+</ColorPalette>

@@ -6,7 +6,6 @@ import * as React from "react";
 
 export default {
     title: 'Foundation/Colors',
-    tags: ['autodocs'],
     parameters: {
         docs: {
             page: () => (
