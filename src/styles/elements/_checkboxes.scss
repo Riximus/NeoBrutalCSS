@@ -37,22 +37,9 @@ input.neo-checkbox {
     @include shadows.translate-box-shadow;
   }
 
-  // TODO maybe make this a mixin?
-  // TODO maybe make all of them below mixins???
-
-  // TODO fix the checkbox behaving weirdly when clicked
   &:checked {
     transform: translate(0) translate3d(0,0,0);
     box-shadow: none !important;
-    background-color: deeppink;
-  }
-
-  :active {
-    transform: translate(0) translate3d(0,0,0);
-  }
-
-  &:not(:active){
-    @include shadows.hover-shadow-effect;
   }
 
   &.shadow-fixed {
@@ -60,7 +47,7 @@ input.neo-checkbox {
   }
 
   &:focus {
-    // TODO: Add focus styles
+    @include shadows.hover-shadow-effect;
   }
 }
 
