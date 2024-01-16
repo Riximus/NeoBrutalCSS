@@ -43,6 +43,10 @@ export default {
             control: { type: 'select' },
             options: getHoverColorClasses()
         },
+        styleVariant: {
+            control: { type: 'select' },
+            options: ['default', 'cross', 'square'],
+        },
         // Add other customizations as needed
     },
     render: (args) => createCheckbox(args),
@@ -57,6 +61,33 @@ export const Default = {
         disabled: false,
         checkedColorClass: 'default',
         colorClass: 'default',
+        styleVariant: 'default',
+    },
+};
+
+export const Cross = {
+    args: {
+        id: 'defaultCheckbox',
+        name: 'default',
+        value: 'default',
+        checked: false,
+        disabled: false,
+        checkedColorClass: 'default',
+        colorClass: 'default',
+        styleVariant: 'cross',
+    },
+};
+
+export const Square = {
+    args: {
+        id: 'defaultCheckbox',
+        name: 'default',
+        value: 'default',
+        checked: false,
+        disabled: false,
+        checkedColorClass: 'default',
+        colorClass: 'default',
+        styleVariant: 'square',
     },
 };
 
