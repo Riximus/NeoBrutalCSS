@@ -49,7 +49,18 @@ export default {
         },
         // Add other customizations as needed
     },
-    render: (args) => createCheckbox(args),
+    render: (args) => {
+        const { styleVariant, ...checkboxArgs } = args;
+        const checkbox = createCheckbox(checkboxArgs);
+
+        if (styleVariant === 'cross') {
+            checkbox.classList.add('neo-checkbox-cross');
+        } else if (styleVariant === 'square') {
+            checkbox.classList.add('neo-checkbox-square');
+        }
+
+        return checkbox;
+    },
 };
 
 export const Default = {
@@ -67,9 +78,9 @@ export const Default = {
 
 export const Cross = {
     args: {
-        id: 'defaultCheckbox',
-        name: 'default',
-        value: 'default',
+        id: 'crossCheckbox',
+        name: 'cross',
+        value: 'cross',
         checked: false,
         disabled: false,
         checkedColorClass: 'default',
@@ -80,9 +91,9 @@ export const Cross = {
 
 export const Square = {
     args: {
-        id: 'defaultCheckbox',
-        name: 'default',
-        value: 'default',
+        id: 'squareCheckbox',
+        name: 'square',
+        value: 'square',
         checked: false,
         disabled: false,
         checkedColorClass: 'default',

@@ -6,7 +6,7 @@
 $white: map-get(colors.$neo-colors, "white");
 $black: colors.$black;
 
-input.neo-checkbox {
+@mixin neo-checkbox-styles {
   @include borders.neobrutalism-border;
   @include shadows.no-transform-shadow-hover;
   @include animations.transition-time;
@@ -18,20 +18,6 @@ input.neo-checkbox {
   cursor: pointer;
   position: relative;
   display: inline-block;
-
-  &:checked {
-    &::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 40%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      border-bottom: 3px solid $black;
-      border-right: 3px solid $black;
-      width: 8px;
-      height: 14px;
-    }
-  }
 
   &:hover {
     @include shadows.translate-box-shadow;
@@ -49,13 +35,76 @@ input.neo-checkbox {
   &:focus {
     @include shadows.hover-shadow-effect;
   }
+
+  &:not(:focus) {
+    @include shadows.hover-shadow-effect;
+  }
+}
+
+// Checkmark style checkbox
+input.neo-checkbox {
+  @include neo-checkbox-styles;
+
+  &:checked {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-bottom: 3px solid $black;
+      border-right: 3px solid $black;
+      width: 8px;
+      height: 14px;
+    }
+  }
 }
 
 
-.neo-checkbox-cross {
+// Cross style checkbox
+input.neo-checkbox-cross {
+  @include neo-checkbox-styles;
 
+  &:checked {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $black;
+    }
+
+    &::before {
+      left: 7px;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 3px;
+      height: 11px;
+    }
+
+    &::after {
+      left: 50%;
+      top: 7px;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 11px;
+      height: 3px;
+    }
+  }
 }
 
-.neo-checkbox-square {
+// Small square style checkbox
+input.neo-checkbox-square {
+  @include neo-checkbox-styles;
 
+  &:checked {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 15px;
+      background-color: $black;
+    }
+  }
 }
