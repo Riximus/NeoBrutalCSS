@@ -1,6 +1,6 @@
 {
   "name": "neobrutalcss",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Riximus",
   "description": "A simple and flexible CSS framework for building modern websites in the Neobrutalist style.",
   "repository": {
@@ -43,9 +43,10 @@
     "watch:sass": "sass --no-source-map --watch src/styles/main.scss:compiled/styles.css",
     "compile:sass": "sass --no-source-map src/styles/main.scss:compiled/styles.css",
     "bundle:css": "lightningcss --browserslist --minify --bundle compiled/styles.css --output-file dist/neobrutal.css",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run compile:sass && npm run bundle:css",
     "storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook --browsers firefox chromium webkit --no-cache",
+    "watch:test-storybook": "test-storybook --watch",
     "build-storybook": "storybook compiled"
   },
   "license": "ISC",
@@ -59,6 +60,7 @@
     "@storybook/html": "^7.6.6",
     "@storybook/html-vite": "^7.6.6",
     "@storybook/test": "^7.6.6",
+    "@storybook/test-runner": "^0.16.0",
     "lightningcss-cli": "^1.22.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
