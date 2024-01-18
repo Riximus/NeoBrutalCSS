@@ -1,20 +1,27 @@
+/**
+ *
+ * @param checkedColorClass
+ * @param colorClass
+ * @param hoverColorClass
+ * @param checked
+ * @param disabled
+ * @param shadow
+ * @param shadowFixed
+ * @returns {HTMLInputElement}
+ */
 export const createCheckbox = (
     {
-        id,
-        name,
-        value,
-        checked,
-        disabled,
-        checkedColorClass,
-        colorClass,
-        hoverColorClass,
+        checkedColorClass = '',
+        colorClass = '',
+        hoverColorClass = '',
+        checked = false,
+        disabled = false,
+        shadow = false,
+        shadowFixed = false,
     }
 ) => {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.id = id;
-    checkbox.name = name;
-    checkbox.value = value;
     checkbox.checked = checked;
     checkbox.disabled = disabled;
     checkbox.className = [
@@ -22,6 +29,9 @@ export const createCheckbox = (
         checkedColorClass,
         colorClass,
         hoverColorClass,
+        shadow ? 'shadow' : '',
+        shadowFixed ? 'shadow-fixed' : '',
+        disabled ? 'disabled' : '',
     ].filter(Boolean).join(' ');
 
     return checkbox;

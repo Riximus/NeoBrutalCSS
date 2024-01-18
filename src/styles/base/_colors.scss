@@ -124,14 +124,13 @@ $color-palette: (
                 .#{$palette-name}-#{$color-key}-checked:checked {
                         background-color: $color-value !important;
                         &::before {
-                                border-bottom-color: set-text-color($color-value) !important;
-                                border-right-color: set-text-color($color-value) !important;
+                                border-color: set-text-color($color-value) !important;
                         }
                 }
         }
 }
 
-// Generate hover utility classes for muted colors
+// Generate
 @each $color-name, $shades in $muted-colors {
         @each $shade-name, $color-value in $shades {
 
@@ -151,8 +150,7 @@ $color-palette: (
                 .muted-#{$color-name}-#{$shade-name}-checked:checked {
                         background-color: $color-value !important;
                         &::before {
-                                border-bottom-color: set-text-color($color-value);
-                                border-right-color: set-text-color($color-value);
+                                border-color: set-text-color($color-value);
                         }
                 }
         }

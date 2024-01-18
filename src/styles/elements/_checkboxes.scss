@@ -25,6 +25,9 @@ $black: colors.$black;
 
   &:checked {
     transform: translate(0) translate3d(0,0,0);
+  }
+
+  &:checked:not(.shadow-fixed) {
     box-shadow: none !important;
   }
 
@@ -52,8 +55,8 @@ input.neo-checkbox {
       left: 50%;
       top: 40%;
       transform: translate(-50%, -50%) rotate(45deg);
-      border-bottom: 3px solid $black;
-      border-right: 3px solid $black;
+      border-bottom: 3px solid;
+      border-right: 3px solid;
       width: 8px;
       height: 14px;
     }

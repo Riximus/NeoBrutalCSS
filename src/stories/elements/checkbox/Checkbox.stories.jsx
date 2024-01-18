@@ -26,9 +26,6 @@ export default {
         }
     },
     argTypes: {
-        id: { control: 'text' },
-        name: { control: 'text' },
-        value: { control: 'text' },
         checked: { control: 'boolean' },
         disabled: { control: 'boolean' },
         checkedColorClass: {
@@ -47,11 +44,17 @@ export default {
             control: { type: 'select' },
             options: ['default', 'cross', 'square'],
         },
-        // Add other customizations as needed
+        shadow: { control: 'boolean' },
+        shadowFixed: { control: 'boolean' },
     },
     render: (args) => {
         const { styleVariant, ...checkboxArgs } = args;
-        const checkbox = createCheckbox(checkboxArgs);
+
+        const checkboxProps = {
+            ...checkboxArgs,
+        }
+
+        const checkbox = createCheckbox(checkboxProps);
 
         if (styleVariant === 'cross') {
             checkbox.classList.add('neo-checkbox-cross');
@@ -63,19 +66,46 @@ export default {
     },
 };
 
-export const Default = {
+export const Default = {/* Default values in the helper file */};
+
+export const Checkmark = {
     args: {
-        id: 'defaultCheckbox',
-        name: 'default',
-        value: 'default',
-        checked: false,
-        disabled: false,
-        checkedColorClass: 'default',
-        colorClass: 'default',
-        styleVariant: 'default',
+        checked: true,
     },
 };
 
+export const Disabled = {
+    args: {
+        disabled: true,
+    },
+};
+
+export const Shadow = {
+    args: {
+        shadow: true,
+    },
+};
+
+export const ShadowFixed = {
+    args: {
+        shadowFixed: true,
+    },
+};
+
+export const Colored = {
+    args: {
+        colorClass: 'neo-blue',
+    },
+};
+
+export const ColoredHover = {
+    args: {
+        hoverColorClass: 'neo-purple-hover',
+    },
+};
+
+/* TODO: work in progress for different shapes other than checkmark */
+/*
 export const Cross = {
     args: {
         id: 'crossCheckbox',
@@ -101,5 +131,4 @@ export const Square = {
         styleVariant: 'square',
     },
 };
-
-// Add more variants as necessary, such as Checked, Disabled, etc.
+*/
