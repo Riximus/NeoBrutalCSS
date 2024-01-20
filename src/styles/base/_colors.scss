@@ -125,6 +125,7 @@ $color-palette: (
                         background-color: $color-value !important;
                         &::before {
                                 border-color: set-text-color($color-value) !important;
+                                color: set-text-color($color-value);
                         }
                 }
         }
@@ -151,6 +152,7 @@ $color-palette: (
                         background-color: $color-value !important;
                         &::before {
                                 border-color: set-text-color($color-value);
+                                color: set-text-color($color-value);
                         }
                 }
         }

@@ -1,0 +1,77 @@
+@use "../mixins/borders";
+@use "../mixins/shadows";
+@use "../mixins/animations";
+@use "../base/colors";
+
+$white: map-get(colors.$neo-colors, "white");
+$black: colors.$black;
+
+input[type="radio"].neo-radio {
+  @include borders.neobrutalism-border;
+  @include shadows.no-transform-shadow-hover;
+  @include animations.transition-time;
+
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: $white;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-content: center;
+
+  &:hover {
+    @include shadows.translate-box-shadow;
+  }
+
+  &:checked {
+    transform: translate(0) translate3d(0,0,0);
+  }
+
+  &:checked:not(.shadow-fixed) {
+    box-shadow: none !important;
+  }
+
+  &.shadow-fixed {
+    @include shadows.neobrutalism-shadow;
+  }
+
+  &:focus {
+    @include shadows.hover-shadow-effect;
+  }
+
+  &:not(:focus) {
+    @include shadows.hover-shadow-effect;
+  }
+
+  &::before {
+    content: "";
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em;
+  }
+
+  // TODO: this is another way how to show the radio with the color as the radio instead of background
+/*
+&::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    //box-shadow: inset 1em 1em;
+    border: 4px solid $black;
+    }
+   */
+  &:checked {
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+}
