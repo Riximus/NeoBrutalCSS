@@ -1,35 +1,36 @@
-@use "../mixins/shadows";
-@use "../base/variables";
+@use '../mixins/shadows';
+@use '../base/variables';
 
-$x: map-get(variables.$box-shadow, "offset-x");
-$y: map-get(variables.$box-shadow, "offset-y");
+$x: map-get(variables.$box-shadow, 'offset-x');
+$y: map-get(variables.$box-shadow, 'offset-y');
 
 .rounded {
-  border-radius: 20px;
+	border-radius: 20px;
 }
 
 .rounded-corners {
-  border-radius: 8px;
+	border-radius: 8px;
 }
 
 /*
   Shadow
  */
 .shadow {
-  @include shadows.neobrutalism-shadow;
-  @include shadows.translate-box-shadow;
+	@include shadows.neobrutalism-shadow;
+	@include shadows.translate-box-shadow;
 }
 
 .shadow-fixed {
-  @include shadows.neobrutalism-shadow;
-  transform: translate(-$x, -$y) translate3d(0,0,0) !important;
+	@include shadows.neobrutalism-shadow;
+	transform: translate(-$x, -$y) translate3d(0, 0, 0) !important;
 }
 
-.disabled, *:disabled {
-  background-color: #e9ecef !important;
-  color: #6c757d;
-  cursor: not-allowed !important;
-  // add strike-through
-  text-decoration-line: line-through;
-  text-decoration-thickness: 3px;
+.disabled,
+*:disabled {
+	background-color: #e9ecef !important;
+	color: #6c757d;
+	cursor: not-allowed !important;
+	// add strike-through
+	text-decoration-line: line-through;
+	text-decoration-thickness: 3px;
 }

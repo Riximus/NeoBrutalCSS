@@ -1,6 +1,6 @@
 {
   "name": "neobrutalcss",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "Riximus",
   "description": "A simple and flexible CSS framework for building modern websites in the Neobrutalist style.",
   "repository": {
@@ -41,9 +41,10 @@
   "scripts": {
     "serve": "npx serve",
     "watch:sass": "sass --no-source-map --watch src/styles/main.scss:compiled/styles.css",
+    "format:sass": "prettier --write \"src/**/*.scss\"",
     "compile:sass": "sass --no-source-map src/styles/main.scss:compiled/styles.css",
     "bundle:css": "lightningcss --browserslist --minify --bundle compiled/styles.css --output-file dist/neobrutal.css",
-    "build": "npm run compile:sass && npm run bundle:css",
+    "build": "npm run format:sass && npm run compile:sass && npm run bundle:css",
     "storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook --browsers firefox chromium webkit --no-cache",
     "watch:test-storybook": "test-storybook --watch",
@@ -62,6 +63,7 @@
     "@storybook/test": "^7.6.6",
     "@storybook/test-runner": "^0.16.0",
     "lightningcss-cli": "^1.22.1",
+    "prettier": "^3.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.69.5",

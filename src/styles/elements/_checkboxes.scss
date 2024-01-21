@@ -1,114 +1,114 @@
-@use "../mixins/borders";
-@use "../mixins/shadows";
-@use "../mixins/animations";
-@use "../base/colors";
-@use "../base/variables";
+@use '../mixins/borders';
+@use '../mixins/shadows';
+@use '../mixins/animations';
+@use '../base/colors';
+@use '../base/variables';
 
-$white: map-get(colors.$neo-colors, "white");
+$white: map-get(colors.$neo-colors, 'white');
 $black: colors.$black;
 
 @mixin neo-checkbox-styles {
-  @include borders.neobrutalism-border;
-  @include shadows.no-transform-shadow-hover;
-  @include animations.transition-time;
+	@include borders.neobrutalism-border;
+	@include shadows.no-transform-shadow-hover;
+	@include animations.transition-time;
 
-  appearance: none;
-  width: 1.5em;
-  height: 1.5em;
-  background-color: $white;
-  cursor: pointer;
-  position: relative;
-  display: grid;
-  place-content: center;
+	appearance: none;
+	width: 1.5em;
+	height: 1.5em;
+	background-color: $white;
+	cursor: pointer;
+	position: relative;
+	display: grid;
+	place-content: center;
 
-  &:hover {
-    @include shadows.translate-box-shadow;
-  }
+	&:hover {
+		@include shadows.translate-box-shadow;
+	}
 
-  &:checked {
-    transform: translate(0) translate3d(0,0,0);
-  }
+	&:checked {
+		transform: translate(0) translate3d(0, 0, 0);
+	}
 
-  &:checked:not(.shadow-fixed) {
-    box-shadow: none !important;
-  }
+	&:checked:not(.shadow-fixed) {
+		box-shadow: none !important;
+	}
 
-  &.shadow-fixed {
-    @include shadows.neobrutalism-shadow;
-  }
+	&.shadow-fixed {
+		@include shadows.neobrutalism-shadow;
+	}
 
-  &:focus {
-    @include shadows.hover-shadow-effect;
-  }
+	&:focus {
+		@include shadows.hover-shadow-effect;
+	}
 
-  &:not(:focus) {
-    @include shadows.hover-shadow-effect;
-  }
+	&:not(:focus) {
+		@include shadows.hover-shadow-effect;
+	}
 }
 
 // Checkmark style checkbox
-input[type=checkbox].neo-checkbox {
-  @include neo-checkbox-styles;
+input[type='checkbox'].neo-checkbox {
+	@include neo-checkbox-styles;
 
-  &::before {
-    content: '';
-    transform: scale(0) rotate(15deg);
-    transition: variables.$transition-ms transform ease-in-out;
-    border-bottom: 3px solid;
-    border-right: 3px solid;
-    width: 8px;
-    height: 14px;
-  }
+	&::before {
+		content: '';
+		transform: scale(0) rotate(15deg);
+		transition: variables.$transition-ms transform ease-in-out;
+		border-bottom: 3px solid;
+		border-right: 3px solid;
+		width: 8px;
+		height: 14px;
+	}
 
-  &:checked::before {
-    transform: scale(1) rotate(45deg) translate(-1px, -1px);
-  }
+	&:checked::before {
+		transform: scale(1) rotate(45deg) translate(-1px, -1px);
+	}
 }
 
-
 // Cross style checkbox
-input[type=checkbox].neo-checkbox-cross {
-  @include neo-checkbox-styles;
+input[type='checkbox'].neo-checkbox-cross {
+	@include neo-checkbox-styles;
 
-  &::before, &::after {
-    content: '';
-    position: absolute;
-    transform: scale(0);
-    transition: variables.$transition-ms transform ease-in-out;
-    top: 50%;
-    left: 50%;
-    width: 3px; // Adjust the thickness of the cross lines here
-    height: 1em; // Adjust the length of the cross lines here
-    background-color: $black;
-  }
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		transform: scale(0);
+		transition: variables.$transition-ms transform ease-in-out;
+		top: 50%;
+		left: 50%;
+		width: 3px; // Adjust the thickness of the cross lines here
+		height: 1em; // Adjust the length of the cross lines here
+		background-color: $black;
+	}
 
-  &:checked {
-    &::before {
-      transform: translate(-50%, -50%) rotate(45deg) scale(1);
-    }
+	&:checked {
+		&::before {
+			transform: translate(-50%, -50%) rotate(45deg) scale(1);
+		}
 
-    &::after {
-      transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-    }
-  }
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+		}
+	}
 }
 
 // Small square style checkbox
-input[type=checkbox].neo-checkbox-square {
-  @include neo-checkbox-styles;
+input[type='checkbox'].neo-checkbox-square {
+	@include neo-checkbox-styles;
 
-  &::before {
-    content: "";
-    width: 0.6em;
-    height: 0.6em;
-    transform: scale(0);
-    transition: variables.$transition-ms transform ease-in-out;
-    box-shadow: inset 1em 1em;
-  }
+	&::before {
+		content: '';
+		width: 0.6em;
+		height: 0.6em;
+		transform: scale(0);
+		transition: variables.$transition-ms transform ease-in-out;
+		box-shadow: inset 1em 1em;
+	}
 
-    // TODO: this is another way how to show the square with the color as the square instead of background
-    // TODO: fix the issues in here
-  /*
+	// TODO: this is another way how to show the square with the color as the square instead of background
+	// TODO: fix the issues in here
+	/*
   &::before {
     content: "";
     width: 1.1em;
@@ -120,7 +120,7 @@ input[type=checkbox].neo-checkbox-square {
     }
    */
 
-  &:checked::before {
-      transform: scale(1);
-    }
+	&:checked::before {
+		transform: scale(1);
+	}
 }

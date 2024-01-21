@@ -1,45 +1,44 @@
-@use "../mixins/borders";
-@use "../mixins/shadows";
-@use "../mixins/animations";
-@use "../base/colors";
+@use '../mixins/borders';
+@use '../mixins/shadows';
+@use '../mixins/animations';
+@use '../base/colors';
 
-$white: map-get(colors.$neo-colors, "white");
+$white: map-get(colors.$neo-colors, 'white');
 
 // TODO - Add transitions
 // TODO - Make corners a bit rounder (optional? with another class?)
 
 // Base button class
 button.neo-btn {
-    @include borders.neobrutalism-border;
-    @include shadows.no-transform-shadow-hover;
-    @include animations.transition-time;
+	@include borders.neobrutalism-border;
+	@include shadows.no-transform-shadow-hover;
+	@include animations.transition-time;
 
-    cursor: pointer;
-    outline: none;
-    background-color: $white;
-    padding: 0.5em 1em;
-    font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	background-color: $white;
+	padding: 0.5em 1em;
+	font-weight: bold;
 
-    // TODO create a button with multiple box shadows for the hover effect. Maybe colorize it?
-    &:hover {
-        @include shadows.translate-box-shadow;
-    }
+	// TODO create a button with multiple box shadows for the hover effect. Maybe colorize it?
+	&:hover {
+		@include shadows.translate-box-shadow;
+	}
 
-    // TODO maybe make this a mixin?
-    // TODO maybe make all of them below mixins???
-    &:active {
-        transform: translate(0) translate3d(0,0,0);
-        box-shadow: none;
-    }
+	// TODO maybe make this a mixin?
+	// TODO maybe make all of them below mixins???
+	&:active {
+		transform: translate(0) translate3d(0, 0, 0);
+		box-shadow: none;
+	}
 
-    &:not(:active){
-        @include shadows.hover-shadow-effect;
-    }
+	&:not(:active) {
+		@include shadows.hover-shadow-effect;
+	}
 
-    &.shadow-fixed {
-        @include shadows.neobrutalism-shadow;
-    }
-
+	&.shadow-fixed {
+		@include shadows.neobrutalism-shadow;
+	}
 }
 
 /*
@@ -47,21 +46,21 @@ button.neo-btn {
 */
 // Small size variant
 button.neo-btn--s {
-    @extend .neo-btn;
-    padding: 0.4em 0.75em;
-    font-size: 0.9em;
+	@extend .neo-btn;
+	padding: 0.4em 0.75em;
+	font-size: 0.9em;
 }
 
 // Big size variant
 button.neo-btn--l {
-    @extend .neo-btn;
-    padding: 0.7em 1.25em;
-    font-size: 1.2em;
+	@extend .neo-btn;
+	padding: 0.7em 1.25em;
+	font-size: 1.2em;
 }
 
 // Bigger size variant
 button.neo-btn--xl {
-    @extend .neo-btn;
-    padding: 0.8em 1.5em;
-    font-size: 1.4em;
+	@extend .neo-btn;
+	padding: 0.8em 1.5em;
+	font-size: 1.4em;
 }

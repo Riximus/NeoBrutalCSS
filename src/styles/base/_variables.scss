@@ -1,13 +1,13 @@
-@use "colors";
+@use 'colors';
 
 $black: colors.$black;
 
 $box-shadow: (
-  "offset-x": 3px,
-  "offset-y": 3px,
-  "blur": 0,
-  "spread": 0,
-  "color": $black,
+	'offset-x': 3px,
+	'offset-y': 3px,
+	'blur': 0,
+	'spread': 0,
+	'color': $black,
 );
 
 $transition-ms: 50ms;

@@ -1,85 +1,83 @@
-@use "../mixins/borders";
-@use "../mixins/shadows";
-@use "../mixins/animations";
-@use "../base/colors";
+@use '../mixins/borders';
+@use '../mixins/shadows';
+@use '../mixins/animations';
+@use '../base/colors';
 
-$white: map-get(colors.$neo-colors, "white");
+$white: map-get(colors.$neo-colors, 'white');
 $black: colors.$black;
-$error: map-get(colors.$feedback-colors, "danger");
+$error: map-get(colors.$feedback-colors, 'danger');
 
 // Base text input class in neobrutalist style
-input[type="text"].neo-input-text,
-input[type="search"].neo-input-text,
-input[type="number"].neo-input-text,
-input[type="password"].neo-input-text,
-input[type="tel"].neo-input-text,
-input[type="email"].neo-input-text {
+input[type='text'].neo-input-text,
+input[type='search'].neo-input-text,
+input[type='number'].neo-input-text,
+input[type='password'].neo-input-text,
+input[type='tel'].neo-input-text,
+input[type='email'].neo-input-text {
+	@include borders.neobrutalism-border;
+	@include shadows.no-transform-shadow-hover;
+	@include animations.transition-time;
 
-  @include borders.neobrutalism-border;
-  @include shadows.no-transform-shadow-hover;
-  @include animations.transition-time;
+	padding: 0.5em 0.6em;
+	outline: none;
 
-  padding: 0.5em 0.6em;
-  outline: none;
+	&:hover {
+		@include shadows.translate-box-shadow;
+	}
 
-  &:hover {
-    @include shadows.translate-box-shadow;
-  }
+	&:focus {
+		transform: translate(0) translate3d(0, 0, 0);
+		box-shadow: none;
+	}
 
-  &:focus {
-    transform: translate(0) translate3d(0,0,0);
-    box-shadow: none;
-  }
+	&:hover:focus:not(.shadow-fixed) {
+		box-shadow: none !important;
+		transform: translate(0) translate3d(0, 0, 0) !important;
+	}
 
-  &:hover:focus:not(.shadow-fixed) {
-    box-shadow: none !important;
-    transform: translate(0) translate3d(0,0,0) !important;
-  }
+	// TODO maybe make this a mixin?
+	// TODO maybe make all of them below mixins???
+	&:active {
+		transform: translate(0) translate3d(0, 0, 0);
+		box-shadow: none;
+	}
 
+	&:not(:active) {
+		@include shadows.hover-shadow-effect;
+	}
 
-  // TODO maybe make this a mixin?
-  // TODO maybe make all of them below mixins???
-  &:active {
-    transform: translate(0) translate3d(0,0,0);
-    box-shadow: none;
-  }
+	&.shadow-fixed {
+		@include shadows.neobrutalism-shadow;
+	}
+	//
 
-  &:not(:active){
-    @include shadows.hover-shadow-effect;
-  }
+	// TODO: swap this out with the disabled mixin when it's ready
+	&:disabled {
+		background-color: #e9ecef;
+		color: #6c757d;
+		cursor: not-allowed;
+	}
 
-  &.shadow-fixed {
-    @include shadows.neobrutalism-shadow;
-  }
-  //
+	&.error {
+		border-color: $error;
+	}
 
-  // TODO: swap this out with the disabled mixin when it's ready
-  &:disabled {
-    background-color: #e9ecef;
-    color: #6c757d;
-    cursor: not-allowed;
-  }
+	// Optional: Define variants for different sizes if needed
+	&--small {
+		padding: 0.4em 0.5em;
+		font-size: 0.9em;
 
-  &.error {
-    border-color: $error;
-  }
+		&.rounded {
+			padding: 0.4em 0.8em;
+		}
+	}
 
-  // Optional: Define variants for different sizes if needed
-  &--small {
-    padding: 0.4em 0.5em;
-    font-size: 0.9em;
+	&--large {
+		padding: 0.7em 0.7em;
+		font-size: 1.2em;
+	}
 
-    &.rounded {
-      padding: 0.4em 0.8em;
-    }
-  }
-
-  &--large {
-    padding: 0.7em 0.7em;
-    font-size: 1.2em;
-  }
-
-  &.rounded {
-    padding: 0.5em 0.9em;
-  }
+	&.rounded {
+		padding: 0.5em 0.9em;
+	}
 }

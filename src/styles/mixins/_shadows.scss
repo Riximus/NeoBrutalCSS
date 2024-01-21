@@ -1,39 +1,40 @@
-@use "../base/variables";
-@use "../base/colors";
+@use '../base/variables';
+@use '../base/colors';
 
-$error: map-get(colors.$feedback-colors, "danger");
+$error: map-get(colors.$feedback-colors, 'danger');
 
-$x: map-get(variables.$box-shadow, "offset-x");
-$y: map-get(variables.$box-shadow, "offset-y");
-$blur: map-get(variables.$box-shadow, "blur");
-$spread: map-get(variables.$box-shadow, "spread");
-$color: map-get(variables.$box-shadow, "color");
+$x: map-get(variables.$box-shadow, 'offset-x');
+$y: map-get(variables.$box-shadow, 'offset-y');
+$blur: map-get(variables.$box-shadow, 'blur');
+$spread: map-get(variables.$box-shadow, 'spread');
+$color: map-get(variables.$box-shadow, 'color');
 
 @mixin neobrutalism-shadow {
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: $x $y $blur $spread $color;
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	box-shadow: $x $y $blur $spread $color;
 
-  &.error {
-    box-shadow: $x $y $blur $spread $error;
-  }
+	&.error {
+		box-shadow: $x $y $blur $spread $error;
+	}
 }
 
 @mixin hover-shadow-effect {
-  &:not(.shadow):hover {
-    @include neobrutalism-shadow;
-  }
+	&:not(.shadow):hover {
+		@include neobrutalism-shadow;
+	}
 
-  &:hover {
-    box-shadow: none;
-  }
+	&:hover {
+		box-shadow: none;
+	}
 }
 
 @mixin no-transform-shadow-hover {
-  &.shadow:hover, &.shadow-fixed:hover {
-    transform: none;
-  }
+	&.shadow:hover,
+	&.shadow-fixed:hover {
+		transform: none;
+	}
 }
 
 @mixin translate-box-shadow {
-  transform: translate(-$x, -$y) translate3d(0,0,0);
+	transform: translate(-$x, -$y) translate3d(0, 0, 0);
 }

@@ -3,69 +3,69 @@
 * Link to her dribbble post: https://dribbble.com/shots/20764973-Neobrutalism-UI-How-to
  */
 
-@use "sass:math";
+@use 'sass:math';
 
 $black: #000000;
 
 $neo-colors: (
-        "white": #FFFFFF,
-        "blue": #7DF9FF,
-        "green": #2FFF2F,
-        "pink": #FF00F5,
-        "purple": #3300FF,
-        "yellow": #FFFF00,
-        "orange": #FF4911,
+	'white': #ffffff,
+	'blue': #7df9ff,
+	'green': #2fff2f,
+	'pink': #ff00f5,
+	'purple': #3300ff,
+	'yellow': #ffff00,
+	'orange': #ff4911,
 );
 
 $feedback-colors: (
-        "danger": #C82333,
-        "warning": #FF8C00,
-        "success": #4CAF50,
-        "info": #17A2B8,
+	'danger': #c82333,
+	'warning': #ff8c00,
+	'success': #4caf50,
+	'info': #17a2b8,
 );
 
 $muted-colors: (
-        "blue": (
-                "lighter": #DAF5F0,
-                "light": #A7DBD8,
-                "base": #87CEEB,
-                "dark": #69D2E7,
-        ),
-        "green": (
-                "lighter": #B5D2AD,
-                "light": #BAFCA2,
-                "base": #90EE90,
-                "dark": #7FBC8C,
-        ),
-        "pink": (
-                "lighter": #FCDFFF,
-                "light": #FFC0CB,
-                "base": #FFB2EF,
-                "dark": #FF69B4,
-        ),
-        "purple": (
-                "lighter": #E3DFF2,
-                "light": #C4A1FF,
-                "base": #A388EE,
-                "dark": #9723C9,
-        ),
-        "yellow": (
-                "lighter": #FDFD96,
-                "light": #FFDB58,
-                "base": #F4D738,
-                "dark": #E3A018,
-        ),
-        "orange": (
-                "lighter": #F8D6B3,
-                "light": #FFA07A,
-                "base": #FF7A5C,
-                "dark": #FF6B6B,
-        ),
+	'blue': (
+		'lighter': #daf5f0,
+		'light': #a7dbd8,
+		'base': #87ceeb,
+		'dark': #69d2e7,
+	),
+	'green': (
+		'lighter': #b5d2ad,
+		'light': #bafca2,
+		'base': #90ee90,
+		'dark': #7fbc8c,
+	),
+	'pink': (
+		'lighter': #fcdfff,
+		'light': #ffc0cb,
+		'base': #ffb2ef,
+		'dark': #ff69b4,
+	),
+	'purple': (
+		'lighter': #e3dff2,
+		'light': #c4a1ff,
+		'base': #a388ee,
+		'dark': #9723c9,
+	),
+	'yellow': (
+		'lighter': #fdfd96,
+		'light': #ffdb58,
+		'base': #f4d738,
+		'dark': #e3a018,
+	),
+	'orange': (
+		'lighter': #f8d6b3,
+		'light': #ffa07a,
+		'base': #ff7a5c,
+		'dark': #ff6b6b,
+	),
 );
 
 $color-palette: (
-        "feedback": $feedback-colors,
-        "neo": $neo-colors,
+	'feedback': $feedback-colors,
+	'neo': $neo-colors,
 );
 
 /*
@@ -73,109 +73,118 @@ $color-palette: (
  Link to the article: https://hackernoon.com/how-to-generate-wcag-compliant-contrast-color-in-bootstrap-uiv310s
  */
 @function relative-luminance($color) {
+	$r: math.div(red($color), 255);
+	$g: math.div(green($color), 255);
+	$b: math.div(blue($color), 255);
 
-        $r: math.div(red($color), 255);
-        $g: math.div(green($color), 255);
-        $b: math.div(blue($color), 255);
+	$r: if(
+		$r < 0.03928,
+		math.div($r, 12.92),
+		math.pow(math.div($r + 0.055, 1.055), 2.4)
+	);
+	$g: if(
+		$g < 0.03928,
+		math.div($g, 12.92),
+		math.pow(math.div($g + 0.055, 1.055), 2.4)
+	);
+	$b: if(
+		$b < 0.03928,
+		math.div($b, 12.92),
+		math.pow(math.div($b + 0.055, 1.055), 2.4)
+	);
 
-        $r: if($r < 0.03928, math.div($r, 12.92), math.pow(math.div($r + 0.055, 1.055), 2.4));
-        $g: if($g < 0.03928, math.div($g, 12.92), math.pow(math.div($g + 0.055, 1.055), 2.4));
-        $b: if($b < 0.03928, math.div($b, 12.92), math.pow(math.div($b + 0.055, 1.055), 2.4));
-
-        @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+	@return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
 }
 
 @function contrast-ratio($background, $foreground) {
-        $l1: relative-luminance($background) + 0.05;
-        $l2: relative-luminance($foreground) + 0.05;
+	$l1: relative-luminance($background) + 0.05;
+	$l2: relative-luminance($foreground) + 0.05;
 
-        @return if($l1 > $l2, math.div($l1, $l2), math.div($l2, $l1));
+	@return if($l1 > $l2, math.div($l1, $l2), math.div($l2, $l1));
 }
 
 @function set-text-color($background-color) {
-        $black: #000000;
-        $white: #ffffff;
+	$black: #000000;
+	$white: #ffffff;
 
-        $black-contrast: contrast-ratio($background-color, $black);
-        $white-contrast: contrast-ratio($background-color, $white);
+	$black-contrast: contrast-ratio($background-color, $black);
+	$white-contrast: contrast-ratio($background-color, $white);
 
-        @return if($white-contrast > $black-contrast, $white, $black);
+	@return if($white-contrast > $black-contrast, $white, $black);
 }
 
 // TODO remove the transition from the hover classes
 
 // Generate hover utility classes for neo and feedback colors
 @each $palette-name, $color-group in $color-palette {
-        @each $color-key, $color-value in $color-group {
+	@each $color-key, $color-value in $color-group {
+		// Color classes for each color
+		.#{$palette-name}-#{$color-key} {
+			background-color: $color-value !important;
+			color: set-text-color($color-value);
+		}
 
-                // Color classes for each color
-                .#{$palette-name}-#{$color-key} {
-                        background-color: $color-value !important;
-                        color: set-text-color($color-value);
-                }
+		// Hover color classes for each color
+		.#{$palette-name}-#{$color-key}-hover:hover {
+			background-color: $color-value !important;
+			color: set-text-color($color-value);
+		}
 
-                // Hover color classes for each color
-                .#{$palette-name}-#{$color-key}-hover:hover {
-                        background-color: $color-value !important;
-                        color: set-text-color($color-value);
-                }
+		// Checked color classes for each color
+		.#{$palette-name}-#{$color-key}-checked:checked {
+			background-color: $color-value !important;
+			&::before {
+				border-color: set-text-color($color-value) !important;
+				color: set-text-color($color-value);
+			}
+			&::after {
+				border-color: set-text-color($color-value);
+				color: set-text-color($color-value);
+			}
 
-                // Checked color classes for each color
-                .#{$palette-name}-#{$color-key}-checked:checked {
-                        background-color: $color-value !important;
-                        &::before {
-                                border-color: set-text-color($color-value) !important;
-                                color: set-text-color($color-value);
-                        }
-                        &::after {
-                                border-color: set-text-color($color-value);
-                                color: set-text-color($color-value);
-                        }
-
-                        &.neo-checkbox-cross {
-                                &::before,
-                                &::after {
-                                        background-color: set-text-color($color-value) !important;
-                                }
-                        }
-                }
-        }
+			&.neo-checkbox-cross {
+				&::before,
+				&::after {
+					background-color: set-text-color($color-value) !important;
+				}
+			}
+		}
+	}
 }
 
 // Generate
 @each $color-name, $shades in $muted-colors {
-        @each $shade-name, $color-value in $shades {
+	@each $shade-name, $color-value in $shades {
+		// Muted color classes for each color
+		.muted-#{$color-name}-#{$shade-name} {
+			background-color: $color-value !important;
+			color: set-text-color($color-value);
+		}
 
-                // Muted color classes for each color
-                .muted-#{$color-name}-#{$shade-name} {
-                        background-color: $color-value !important;
-                        color: set-text-color($color-value);
-                }
+		// Hover color classes for each color
+		.muted-#{$color-name}-#{$shade-name}-hover:hover {
+			background-color: $color-value !important;
+			color: set-text-color($color-value);
+		}
 
-                // Hover color classes for each color
-                .muted-#{$color-name}-#{$shade-name}-hover:hover {
-                        background-color: $color-value !important;
-                        color: set-text-color($color-value);
-                }
+		// Checked color classes for each color
+		.muted-#{$color-name}-#{$shade-name}-checked:checked {
+			background-color: $color-value !important;
+			&::before {
+				border-color: set-text-color($color-value);
+				color: set-text-color($color-value);
+			}
+			&::after {
+				border-color: set-text-color($color-value);
+				color: set-text-color($color-value);
+			}
 
-                // Checked color classes for each color
-                .muted-#{$color-name}-#{$shade-name}-checked:checked {
-                        background-color: $color-value !important;
-                        &::before {
-                                border-color: set-text-color($color-value);
-                                color: set-text-color($color-value);
-                        }
-                        &::after {
-                                border-color: set-text-color($color-value);
-                                color: set-text-color($color-value);
-                        }
-
-                        &.neo-checkbox-cross {
-                                &::before,
-                                &::after {
-                                        background-color: set-text-color($color-value) !important;
-                                }
-                        }
-                }
-        }
+			&.neo-checkbox-cross {
+				&::before,
+				&::after {
+					background-color: set-text-color($color-value) !important;
+				}
+			}
+		}
+	}
 }

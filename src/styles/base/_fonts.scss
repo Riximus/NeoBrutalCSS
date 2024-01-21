@@ -1,10 +1,15 @@
 body {
-  font-family: 'Public Sans', sans-serif;
+	font-family: 'Public Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lexend Mega', sans-serif;
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Lexend Mega', sans-serif;
+	margin: 0;
 }
 
 // Font weights
@@ -14,92 +19,110 @@ h1, h2, h3, h4, h5, h6 {
 
 // Black
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Black.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Black.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Black.woff2')
+		format('woff2');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Extra Bold
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraBold.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraBold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraBold.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraBold.woff2')
+		format('woff2');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Bold
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Bold.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Bold.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Semi Bold
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-SemiBold.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-SemiBold.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-SemiBold.woff2')
+		format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Medium
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Medium.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Medium.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Medium.woff2')
+		format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Regular
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Regular.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Regular.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Regular.woff2')
+		format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Light
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Light.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Light.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Light.woff2')
+		format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Extra Light
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraLight.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraLight.woff2') format('woff2');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraLight.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-ExtraLight.woff2')
+		format('woff2');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Thin
 @font-face {
-  font-family: 'Lexend Mega';
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Thin.ttf') format('truetype');
-  src: url('../../fonts/Lexend_Mega/static/LexendMega-Thin.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Lexend Mega';
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Thin.ttf')
+		format('truetype');
+	src: url('../../fonts/Lexend_Mega/static/LexendMega-Thin.woff2')
+		format('woff2');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
 }
 
 //-------------------------------------
@@ -108,181 +131,216 @@ h1, h2, h3, h4, h5, h6 {
 
 // Black
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-Black.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-Black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-Black.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-Black.woff2')
+		format('woff2');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Black Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-BlackItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-BlackItalic.woff2') format('woff2');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-BlackItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-BlackItalic.woff2')
+		format('woff2');
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Extra Bold
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBold.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBold.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBold.woff2')
+		format('woff2');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Extra Bold Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBoldItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBoldItalic.woff2') format('woff2');
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBoldItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraBoldItalic.woff2')
+		format('woff2');
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Bold
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-Bold.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-Bold.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Bold Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-BoldItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-BoldItalic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-BoldItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-BoldItalic.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Semi Bold
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-SemiBold.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-SemiBold.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-SemiBold.woff2')
+		format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Semi Bold Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-SemiBoldItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-SemiBoldItalic.woff2') format('woff2');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-SemiBoldItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-SemiBoldItalic.woff2')
+		format('woff2');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Medium
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-Medium.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-Medium.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-Medium.woff2')
+		format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Medium Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-MediumItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-MediumItalic.woff2') format('woff2');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-MediumItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-MediumItalic.woff2')
+		format('woff2');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Regular
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-Regular.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-Regular.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-Regular.woff2')
+		format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Regular Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-Italic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-Italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-Italic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-Italic.woff2')
+		format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Light
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-Light.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-Light.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-Light.woff2')
+		format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Light Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-LightItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-LightItalic.woff2') format('woff2');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-LightItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-LightItalic.woff2')
+		format('woff2');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Extra Light
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLight.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLight.woff2') format('woff2');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLight.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLight.woff2')
+		format('woff2');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Extra Light Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLightItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLightItalic.woff2') format('woff2');
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLightItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-ExtraLightItalic.woff2')
+		format('woff2');
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
 }
 
 // Thin
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-Thin.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-Thin.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-Thin.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-Thin.woff2')
+		format('woff2');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
 }
 
 // Thin Italic
 @font-face {
-  font-family: 'Public Sans';
-  src: url('../../fonts/Public_Sans/static/PublicSans-ThinItalic.ttf') format('truetype');
-  src: url('../../fonts/Public_Sans/static/PublicSans-ThinItalic.woff2') format('woff2');
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Public Sans';
+	src: url('../../fonts/Public_Sans/static/PublicSans-ThinItalic.ttf')
+		format('truetype');
+	src: url('../../fonts/Public_Sans/static/PublicSans-ThinItalic.woff2')
+		format('woff2');
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
 }
-
