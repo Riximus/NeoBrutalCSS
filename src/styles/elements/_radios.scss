@@ -2,10 +2,13 @@
 @use "../mixins/shadows";
 @use "../mixins/animations";
 @use "../base/colors";
+@use "../base/variables";
 
 $white: map-get(colors.$neo-colors, "white");
 $black: colors.$black;
 
+// TODO: do it like the checkboxes with this part as mixin and
+//  the two styles with colored circle and "normal" circle as classes
 input[type="radio"].neo-radio {
   @include borders.neobrutalism-border;
   @include shadows.no-transform-shadow-hover;
@@ -51,25 +54,23 @@ input[type="radio"].neo-radio {
     height: 0.6em;
     border-radius: 50%;
     transform: scale(0);
-    transition: 120ms transform ease-in-out;
+    transition: variables.$transition-ms transform ease-in-out;
     box-shadow: inset 1em 1em;
   }
-
   // TODO: this is another way how to show the radio with the color as the radio instead of background
 /*
-&::before {
+  &::before {
     content: "";
-    width: 18px;
-    height: 18px;
+    width: 1.1em;
+    height: 1.1em;
     border-radius: 50%;
     transform: scale(0);
-    transition: 120ms transform ease-in-out;
+    transition: variables.$transition-ms transform ease-in-out;
     //box-shadow: inset 1em 1em;
     border: 4px solid $black;
     }
-   */
+*/
   &:checked {
-
     &::before {
       transform: scale(1);
     }

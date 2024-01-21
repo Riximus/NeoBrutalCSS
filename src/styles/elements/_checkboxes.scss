@@ -2,6 +2,7 @@
 @use "../mixins/shadows";
 @use "../mixins/animations";
 @use "../base/colors";
+@use "../base/variables";
 
 $white: map-get(colors.$neo-colors, "white");
 $black: colors.$black;
@@ -17,7 +18,8 @@ $black: colors.$black;
   background-color: $white;
   cursor: pointer;
   position: relative;
-  display: inline-block;
+  display: grid;
+  place-content: center;
 
   &:hover {
     @include shadows.translate-box-shadow;
@@ -48,18 +50,18 @@ $black: colors.$black;
 input[type=checkbox].neo-checkbox {
   @include neo-checkbox-styles;
 
-  &:checked {
-    &::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 40%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      border-bottom: 3px solid;
-      border-right: 3px solid;
-      width: 8px;
-      height: 14px;
-    }
+  &::before {
+    content: '';
+    transform: scale(0) rotate(15deg);
+    transition: variables.$transition-ms transform ease-in-out;
+    border-bottom: 3px solid;
+    border-right: 3px solid;
+    width: 8px;
+    height: 14px;
+  }
+
+  &:checked::before {
+    transform: scale(1) rotate(45deg) translate(-1px, -1px);
   }
 }
 
@@ -68,28 +70,25 @@ input[type=checkbox].neo-checkbox {
 input[type=checkbox].neo-checkbox-cross {
   @include neo-checkbox-styles;
 
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    transform: scale(0);
+    transition: variables.$transition-ms transform ease-in-out;
+    top: 50%;
+    left: 50%;
+    width: 3px; // Adjust the thickness of the cross lines here
+    height: 1em; // Adjust the length of the cross lines here
+    background-color: $black;
+  }
+
   &:checked {
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      background-color: $black;
-    }
-
     &::before {
-      left: 7px;
-      top: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      width: 3px;
-      height: 11px;
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
     }
 
     &::after {
-      left: 50%;
-      top: 7px;
-      transform: translate(-50%, -50%) rotate(-45deg);
-      width: 11px;
-      height: 3px;
+      transform: translate(-50%, -50%) rotate(-45deg) scale(1);
     }
   }
 }
@@ -98,16 +97,30 @@ input[type=checkbox].neo-checkbox-cross {
 input[type=checkbox].neo-checkbox-square {
   @include neo-checkbox-styles;
 
-  &:checked {
-    &::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 15px;
-      height: 15px;
-      background-color: $black;
-    }
+  &::before {
+    content: "";
+    width: 0.6em;
+    height: 0.6em;
+    transform: scale(0);
+    transition: variables.$transition-ms transform ease-in-out;
+    box-shadow: inset 1em 1em;
   }
+
+    // TODO: this is another way how to show the square with the color as the square instead of background
+    // TODO: fix the issues in here
+  /*
+  &::before {
+    content: "";
+    width: 1.1em;
+    height: 1.1em;
+    transform: scale(0);
+    transition: variables.$transition-ms transform ease-in-out;
+    //box-shadow: inset 1em 1em;
+    border: 4px solid $black;
+    }
+   */
+
+  &:checked::before {
+      transform: scale(1);
+    }
 }

@@ -1,3 +1,14 @@
+/**
+ *
+ * @param checkedColorClass
+ * @param colorClass
+ * @param hoverColorClass
+ * @param checked
+ * @param disabled
+ * @param shadow
+ * @param shadowFixed
+ * @returns {HTMLInputElement}
+ */
 export const createRadio = (
     {
         checkedColorClass = '',

@@ -1,5 +1,5 @@
-import { createCheckbox } from './Checkbox.js';
-import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
+import {createCheckbox} from './Checkbox.js';
+import {Controls, Description, Primary, Stories, Subtitle, Title} from '@storybook/blocks';
 import * as React from 'react';
 import {getAllColorClasses, getCheckedColorClasses, getHoverColorClasses} from "../../storybook-colors.js";
 
@@ -47,23 +47,7 @@ export default {
         shadow: { control: 'boolean' },
         shadowFixed: { control: 'boolean' },
     },
-    render: (args) => {
-        const { styleVariant, ...checkboxArgs } = args;
-
-        const checkboxProps = {
-            ...checkboxArgs,
-        }
-
-        const checkbox = createCheckbox(checkboxProps);
-
-        if (styleVariant === 'cross') {
-            checkbox.classList.add('neo-checkbox-cross');
-        } else if (styleVariant === 'square') {
-            checkbox.classList.add('neo-checkbox-square');
-        }
-
-        return checkbox;
-    },
+    render: (args) => createCheckbox(args),
 };
 
 export const Default = {/* Default values in the helper file */};
@@ -71,6 +55,20 @@ export const Default = {/* Default values in the helper file */};
 export const Checkmark = {
     args: {
         checked: true,
+    },
+};
+
+export const Cross = {
+    args: {
+        checked: true,
+        styleVariant: 'cross',
+    },
+};
+
+export const Square = {
+    args: {
+        checked: true,
+        styleVariant: 'square',
     },
 };
 
@@ -98,37 +96,15 @@ export const Colored = {
     },
 };
 
+export const ColoredChecked = {
+    args: {
+        checked: true,
+        checkedColorClass: 'neo-pink-checked',
+    },
+}
+
 export const ColoredHover = {
     args: {
         hoverColorClass: 'neo-purple-hover',
     },
 };
-
-/* TODO: work in progress for different shapes other than checkmark */
-/*
-export const Cross = {
-    args: {
-        id: 'crossCheckbox',
-        name: 'cross',
-        value: 'cross',
-        checked: false,
-        disabled: false,
-        checkedColorClass: 'default',
-        colorClass: 'default',
-        styleVariant: 'cross',
-    },
-};
-
-export const Square = {
-    args: {
-        id: 'squareCheckbox',
-        name: 'square',
-        value: 'square',
-        checked: false,
-        disabled: false,
-        checkedColorClass: 'default',
-        colorClass: 'default',
-        styleVariant: 'square',
-    },
-};
-*/

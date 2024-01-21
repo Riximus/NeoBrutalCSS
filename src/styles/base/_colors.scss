@@ -127,6 +127,17 @@ $color-palette: (
                                 border-color: set-text-color($color-value) !important;
                                 color: set-text-color($color-value);
                         }
+                        &::after {
+                                border-color: set-text-color($color-value);
+                                color: set-text-color($color-value);
+                        }
+
+                        &.neo-checkbox-cross {
+                                &::before,
+                                &::after {
+                                        background-color: set-text-color($color-value) !important;
+                                }
+                        }
                 }
         }
 }
@@ -153,6 +164,17 @@ $color-palette: (
                         &::before {
                                 border-color: set-text-color($color-value);
                                 color: set-text-color($color-value);
+                        }
+                        &::after {
+                                border-color: set-text-color($color-value);
+                                color: set-text-color($color-value);
+                        }
+
+                        &.neo-checkbox-cross {
+                                &::before,
+                                &::after {
+                                        background-color: set-text-color($color-value) !important;
+                                }
                         }
                 }
         }

@@ -7,6 +7,7 @@
  * @param disabled
  * @param shadow
  * @param shadowFixed
+ * @param styleVariant
  * @returns {HTMLInputElement}
  */
 export const createCheckbox = (
@@ -18,14 +19,22 @@ export const createCheckbox = (
         disabled = false,
         shadow = false,
         shadowFixed = false,
+        styleVariant = 'default',
     }
-) => {
+    ) => {
+    let checkboxClass = 'neo-checkbox';
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = checked;
     checkbox.disabled = disabled;
+    if (styleVariant === 'cross') {
+        checkboxClass = 'neo-checkbox-cross';
+    } else if (styleVariant === 'square') {
+        checkboxClass = 'neo-checkbox-square';
+    }
+
     checkbox.className = [
-        'neo-checkbox',
+        checkboxClass,
         checkedColorClass,
         colorClass,
         hoverColorClass,

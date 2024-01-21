@@ -38,10 +38,6 @@ export default {
             control: { type: 'select' },
             options: getHoverColorClasses()
         },
-        styleVariant: {
-            control: { type: 'select' },
-            options: ['default', 'cross', 'square'],
-        },
         shadow: { control: 'boolean' },
         shadowFixed: { control: 'boolean' },
     },
@@ -50,3 +46,46 @@ export default {
 }
 
 export const Default = {/* Default values in the helper file */}
+
+export const Radio = {
+    args: {
+        checked: true,
+    },
+}
+
+export const Disabled = {
+    args: {
+        disabled: true,
+    },
+}
+
+export const Shadow = {
+    args: {
+        shadow: true,
+    },
+}
+
+export const ShadowFixed = {
+    args: {
+        shadowFixed: true,
+    },
+}
+
+export const Colored = {
+    args: {
+        colorClass: 'neo-green',
+    },
+}
+
+export const ColoredChecked = {
+    args: {
+        checked: true,
+        checkedColorClass: 'neo-pink-checked',
+    },
+}
+
+export const ColoredHover = {
+    args: {
+        hoverColorClass: 'neo-green-hover',
+    },
+}
