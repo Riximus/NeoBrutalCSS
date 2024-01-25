@@ -149,6 +149,10 @@ textarea {
 	margin: 0; /* 2 */
 }
 
+select::-ms-expand {
+	display: none;
+}
+
 /**
 Remove the inheritance of text transform in Edge and Firefox.
 */
@@ -259,4 +263,20 @@ Add the correct display in Chrome and Safari.
 
 summary {
 	display: list-item;
+}
+
+/*
+Custom styles
+ */
+
+select {
+	// A reset of styles, including removing the default dropdown arrow
+	appearance: none;
+	// Additional resets for further consistency
+	background-color: transparent;
+	border: none;
+	padding: 0 1em 0 0;
+	width: 100%;
+	cursor: inherit;
+	outline: none;
 }

@@ -1,3 +1,23 @@
-.neo-select {
-	border: 2px solid red;
+select.neo-select {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 0.2em 1.5em 0.2em 0.5em;
+	border-radius: 0.25em; // Optional: for rounded corners
+	cursor: pointer;
+
+	&:focus {
+		outline: none; // Removes the default focus outline
+		border-color: #007bff; // Add custom focus style
+	}
+
+	// Custom arrow indicator (optional)
+	background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="0,0 20,0 10,10"/></svg>');
+	background-repeat: no-repeat;
+	background-position: right 0.5em top 90%, 0 0; // Adjust the position accordingly
+	background-size: 1em auto, 100%;
+
+	// Style options (limited support)
+	option {
+		padding: 0.5em; // Padding for options
+	}
 }
