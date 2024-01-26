@@ -1,10 +1,31 @@
-export const createSelect = () => {
+/**
+ *
+ * @param placeholder
+ * @param disabled
+ * @param shadow
+ * @param shadowFixed
+ * @param borderRadius
+ * @param colorClass
+ * @param hoverColorClass
+ * @param focusColorClass
+ * @returns {HTMLSelectElement}
+ */
+export const createSelect = ({
+	placeholder = 'Please select an option',
+	disabled = false,
+	shadow = false,
+	shadowFixed = false,
+	borderRadius,
+	colorClass,
+	hoverColorClass,
+	focusColorClass,
+}) => {
 	const select = document.createElement('select');
 
 	// Placeholder as the first option
 	const placeholderOption = document.createElement('option');
 	placeholderOption.value = '';
-	placeholderOption.text = 'Please select an option';
+	placeholderOption.text = placeholder;
 	placeholderOption.disabled = true;
 	placeholderOption.selected = true;
 	select.appendChild(placeholderOption);
@@ -17,6 +38,18 @@ export const createSelect = () => {
 		select.appendChild(optionElement);
 	}
 
-	select.className = 'neo-select';
+	select.className = [
+		'neo-select',
+		colorClass,
+		hoverColorClass,
+		focusColorClass,
+		shadow ? 'shadow' : '',
+		shadowFixed ? 'shadow-fixed' : '',
+		disabled ? 'disabled' : '',
+		borderRadius,
+	]
+		.filter(Boolean)
+		.join(' ');
+
 	return select;
 };

@@ -12,6 +12,7 @@ import {
 	getAllColorClasses,
 	getCheckedColorClasses,
 	getHoverColorClasses,
+	getFocusColorClasses,
 } from '../../storybook-colors.js';
 
 export default {
@@ -38,17 +39,21 @@ export default {
 	argTypes: {
 		checked: { control: 'boolean' },
 		disabled: { control: 'boolean' },
-		checkedColorClass: {
-			control: { type: 'select' },
-			options: getCheckedColorClasses(),
-		},
 		colorClass: {
 			control: { type: 'select' },
 			options: getAllColorClasses(),
 		},
+		checkedColorClass: {
+			control: { type: 'select' },
+			options: getCheckedColorClasses(),
+		},
 		hoverColorClass: {
 			control: { type: 'select' },
 			options: getHoverColorClasses(),
+		},
+		focusColorClass: {
+			control: { type: 'select' },
+			options: getFocusColorClasses(),
 		},
 		shadow: { control: 'boolean' },
 		shadowFixed: { control: 'boolean' },
@@ -64,24 +69,6 @@ export const Default = {
 export const Radio = {
 	args: {
 		checked: true,
-	},
-};
-
-export const Disabled = {
-	args: {
-		disabled: true,
-	},
-};
-
-export const Shadow = {
-	args: {
-		shadow: true,
-	},
-};
-
-export const ShadowFixed = {
-	args: {
-		shadowFixed: true,
 	},
 };
 
@@ -101,5 +88,29 @@ export const ColoredChecked = {
 export const ColoredHover = {
 	args: {
 		hoverColorClass: 'neo-green-hover',
+	},
+};
+
+export const ColoredFocus = {
+	args: {
+		focusColorClass: 'neo-blue-focus',
+	},
+};
+
+export const Disabled = {
+	args: {
+		disabled: true,
+	},
+};
+
+export const Shadow = {
+	args: {
+		shadow: true,
+	},
+};
+
+export const ShadowFixed = {
+	args: {
+		shadowFixed: true,
 	},
 };

@@ -9,6 +9,11 @@ $black: colors.$black;
 
 // TODO: do it like the checkboxes with this part as mixin and
 //  the two styles with colored circle and "normal" circle as classes
+
+@mixin neo-radio-styles {
+
+}
+
 input[type='radio'].neo-radio {
 	@include borders.neobrutalism-border;
 	@include shadows.no-transform-shadow-hover;

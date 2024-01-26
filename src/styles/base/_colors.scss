@@ -5,6 +5,8 @@
 
 @use 'sass:math';
 
+$outline-border: 3px solid;
+
 $black: #000000;
 
 $neo-colors: (
@@ -113,78 +115,90 @@ $color-palette: (
 	@return if($white-contrast > $black-contrast, $white, $black);
 }
 
-// TODO remove the transition from the hover classes
+// ------------------ Mixins ------------------
+@mixin background-and-text-color($color-value) {
+	background-color: $color-value !important;
+	color: set-text-color($color-value);
 
-// Generate hover utility classes for neo and feedback colors
+	&::placeholder {
+		color: set-text-color($color-value);
+		opacity: 0.7;
+	}
+}
+
+@mixin border-and-text-color($color-value) {
+	border-color: $color-value !important;
+	color: set-text-color($color-value);
+}
+
+@mixin neo-checkbox-cross-style($color-value) {
+	&::before,
+	&::after {
+		background-color: set-text-color($color-value) !important;
+	}
+}
+
+// ------------------ Utility classes ------------------
+// Generate utility classes for neo and feedback colors
 @each $palette-name, $color-group in $color-palette {
 	@each $color-key, $color-value in $color-group {
 		// Color classes for each color
 		.#{$palette-name}-#{$color-key} {
-			background-color: $color-value !important;
-			color: set-text-color($color-value);
+			@include background-and-text-color($color-value);
+			@include neo-checkbox-cross-style($color-value);
 		}
 
 		// Hover color classes for each color
 		.#{$palette-name}-#{$color-key}-hover:hover {
-			background-color: $color-value !important;
-			color: set-text-color($color-value);
+			@include background-and-text-color($color-value);
+			@include neo-checkbox-cross-style($color-value);
 		}
 
 		// Checked color classes for each color
 		.#{$palette-name}-#{$color-key}-checked:checked {
 			background-color: $color-value !important;
 			&::before {
-				border-color: set-text-color($color-value) !important;
-				color: set-text-color($color-value);
+				@include border-and-text-color($color-value);
 			}
 			&::after {
-				border-color: set-text-color($color-value);
-				color: set-text-color($color-value);
+				@include border-and-text-color($color-value);
 			}
-
-			&.neo-checkbox-cross {
-				&::before,
-				&::after {
-					background-color: set-text-color($color-value) !important;
-				}
-			}
+			@include neo-checkbox-cross-style($color-value);
+		}
+		.#{$palette-name}-#{$color-key}-focus:focus {
+			outline: $outline-border $color-value !important;
 		}
 	}
 }
 
-// Generate
+// Generate utility classes for muted colors
 @each $color-name, $shades in $muted-colors {
 	@each $shade-name, $color-value in $shades {
 		// Muted color classes for each color
 		.muted-#{$color-name}-#{$shade-name} {
-			background-color: $color-value !important;
-			color: set-text-color($color-value);
+			@include background-and-text-color($color-value);
+			@include neo-checkbox-cross-style($color-value);
 		}
 
 		// Hover color classes for each color
 		.muted-#{$color-name}-#{$shade-name}-hover:hover {
-			background-color: $color-value !important;
-			color: set-text-color($color-value);
+			@include background-and-text-color($color-value);
+			@include neo-checkbox-cross-style($color-value);
 		}
 
 		// Checked color classes for each color
 		.muted-#{$color-name}-#{$shade-name}-checked:checked {
 			background-color: $color-value !important;
 			&::before {
-				border-color: set-text-color($color-value);
-				color: set-text-color($color-value);
+				@include border-and-text-color($color-value);
 			}
 			&::after {
-				border-color: set-text-color($color-value);
-				color: set-text-color($color-value);
+				@include border-and-text-color($color-value);
 			}
-
-			&.neo-checkbox-cross {
-				&::before,
-				&::after {
-					background-color: set-text-color($color-value) !important;
-				}
-			}
+			@include neo-checkbox-cross-style($color-value);
+		}
+		.muted-#{$color-name}-#{$shade-name}-focus:focus {
+			outline: $outline-border $color-value !important;
 		}
 	}
 }

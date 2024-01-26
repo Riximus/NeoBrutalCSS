@@ -20,6 +20,7 @@ input[type='email'].neo-input-text {
 
 	padding: 0.5em 0.6em;
 	outline: none;
+	width: 100%;
 
 	&:hover {
 		@include shadows.translate-box-shadow;

@@ -12,23 +12,27 @@ select.neo-select {
 	@include animations.transition-time;
 	background-color: #fff;
 	padding: 0.2em 1.5em 0.2em 0.5em;
-	border-radius: 0.25em; // Optional: for rounded corners
 	cursor: pointer;
 
 	// Custom arrow indicator (optional)
 	background-image: $arrow-url;
 	background-repeat: no-repeat;
-	background-position: right 0.3em top 50%, 0 0; // Adjust the position accordingly
-	background-size: 1.2em auto, 100%;
+	background-position:
+		right 0.3em top 50%,
+		0 0; // Adjust the position accordingly
+	background-size:
+		1.2em auto,
+		100%;
+
+	// TODO: fix the shadow issue
 
 	&:focus {
 		outline: none;
-		border-color: #007bff; // TODO: Add custom focus style
 		transform: translate(0) translate3d(0, 0, 0);
 		box-shadow: none;
 	}
 
-	&:focus:hover {
+	&:focus:hover:not(.shadow-fixed) {
 		transform: translate(0) translate3d(0, 0, 0);
 		box-shadow: none !important;
 	}
@@ -52,4 +56,8 @@ select.neo-select {
 	}
 	// ----------------------------
 
+	& > option {
+		color: inherit;
+		background-color: inherit;
+	}
 }

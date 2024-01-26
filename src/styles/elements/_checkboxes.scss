@@ -21,6 +21,11 @@ $black: colors.$black;
 	display: grid;
 	place-content: center;
 
+	&:focus:hover {
+		transform: translate(0) translate3d(0, 0, 0);
+		box-shadow: none !important;
+	}
+
 	&:hover {
 		@include shadows.translate-box-shadow;
 	}
