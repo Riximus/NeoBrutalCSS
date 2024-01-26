@@ -20,6 +20,10 @@ export const createSelect = ({
 	hoverColorClass,
 	focusColorClass,
 }) => {
+	if (colorClass === 'default') colorClass = '';
+	if (hoverColorClass === 'default') hoverColorClass = '';
+	if (focusColorClass === 'default') focusColorClass = '';
+
 	const select = document.createElement('select');
 
 	// Placeholder as the first option

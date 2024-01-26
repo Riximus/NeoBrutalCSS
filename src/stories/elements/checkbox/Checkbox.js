@@ -16,12 +16,17 @@ export const createCheckbox = ({
 	colorClass = '',
 	hoverColorClass = '',
 	focusColorClass = '',
+	styleVariant,
 	checked = false,
 	disabled = false,
 	shadow = false,
 	shadowFixed = false,
-	styleVariant = 'default',
 }) => {
+	if (colorClass === 'default') colorClass = '';
+	if (hoverColorClass === 'default') hoverColorClass = '';
+	if (focusColorClass === 'default') focusColorClass = '';
+	if (checkedColorClass === 'default') checkedColorClass = '';
+
 	let checkboxClass = 'neo-checkbox';
 	const checkbox = document.createElement('input');
 	checkbox.type = 'checkbox';
@@ -31,6 +36,8 @@ export const createCheckbox = ({
 		checkboxClass = 'neo-checkbox-cross';
 	} else if (styleVariant === 'square') {
 		checkboxClass = 'neo-checkbox-square';
+	} else if (styleVariant === 'square-inverted') {
+		checkboxClass = 'neo-checkbox-square-inverted';
 	}
 
 	checkbox.className = [

@@ -11,10 +11,6 @@ $black: colors.$black;
 //  the two styles with colored circle and "normal" circle as classes
 
 @mixin neo-radio-styles {
-
-}
-
-input[type='radio'].neo-radio {
 	@include borders.neobrutalism-border;
 	@include shadows.no-transform-shadow-hover;
 	@include animations.transition-time;
@@ -53,6 +49,16 @@ input[type='radio'].neo-radio {
 		@include shadows.hover-shadow-effect;
 	}
 
+	&:checked {
+		&::before {
+			transform: scale(1);
+		}
+	}
+}
+
+input[type='radio'].neo-radio {
+	@include neo-radio-styles;
+
 	&::before {
 		content: '';
 		width: 0.6em;
@@ -62,22 +68,20 @@ input[type='radio'].neo-radio {
 		transition: variables.$transition-ms transform ease-in-out;
 		box-shadow: inset 1em 1em;
 	}
-	// TODO: this is another way how to show the radio with the color as the radio instead of background
-	/*
-  &::before {
-    content: "";
-    width: 1.1em;
-    height: 1.1em;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: variables.$transition-ms transform ease-in-out;
-    //box-shadow: inset 1em 1em;
-    border: 4px solid $black;
-    }
-*/
-	&:checked {
-		&::before {
-			transform: scale(1);
-		}
+}
+
+input[type='radio'].neo-radio-inverted {
+	@include neo-radio-styles;
+
+	&::before {
+		content: '';
+		width: 1.1em;
+		height: 1.1em;
+		border-radius: 50%;
+		transform: scale(0);
+		transition: variables.$transition-ms transform ease-in-out;
+		box-shadow: inset 1em 1em;
+		border: 4px solid $black;
+		color: $white;
 	}
 }

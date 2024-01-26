@@ -25,6 +25,9 @@ export const createButton = ({
 	disabled = false,
 }) => {
 	const btn = document.createElement('button');
+	if (colorClass === 'default') colorClass = '';
+	if (hoverColorClass === 'default') hoverColorClass = '';
+	if (focusColorClass === 'default') focusColorClass = '';
 
 	let sizeClass;
 	switch (size) {

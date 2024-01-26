@@ -160,6 +160,11 @@ $color-palette: (
 			&::before {
 				@include border-and-text-color($color-value);
 			}
+			&.neo-radio-inverted::before,
+			&.neo-checkbox-inverted::before {
+				border-color: set-text-color($color-value) !important;
+				color: $color-value !important;
+			}
 			&::after {
 				@include border-and-text-color($color-value);
 			}
@@ -191,6 +196,11 @@ $color-palette: (
 			background-color: $color-value !important;
 			&::before {
 				@include border-and-text-color($color-value);
+			}
+			&.neo-radio-inverted::before,
+			&.neo-checkbox-inverted::before {
+				border-color: set-text-color($color-value) !important;
+				color: $color-value !important;
 			}
 			&::after {
 				@include border-and-text-color($color-value);

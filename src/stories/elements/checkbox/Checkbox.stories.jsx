@@ -59,7 +59,7 @@ export default {
 		},
 		styleVariant: {
 			control: { type: 'select' },
-			options: ['default', 'cross', 'square'],
+			options: ['default', 'cross', 'square', 'square-inverted'],
 		},
 		shadow: { control: 'boolean' },
 		shadowFixed: { control: 'boolean' },
@@ -88,6 +88,13 @@ export const Square = {
 	args: {
 		checked: true,
 		styleVariant: 'square',
+	},
+};
+
+export const SquareInverted = {
+	args: {
+		checked: true,
+		styleVariant: 'square-inverted',
 	},
 };
 

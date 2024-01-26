@@ -26,6 +26,10 @@ export const createTextInput = ({
 	disabled = false,
 	error = false,
 }) => {
+	if (colorClass === 'default') colorClass = '';
+	if (hoverColorClass === 'default') hoverColorClass = '';
+	if (focusColorClass === 'default') focusColorClass = '';
+
 	const input = document.createElement('input');
 	input.type = 'text';
 	input.placeholder = placeholder;

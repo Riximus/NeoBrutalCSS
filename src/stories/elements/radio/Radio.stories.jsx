@@ -55,6 +55,10 @@ export default {
 			control: { type: 'select' },
 			options: getFocusColorClasses(),
 		},
+		styleVariant: {
+			control: { type: 'select' },
+			options: ['default', 'inverted'],
+		},
 		shadow: { control: 'boolean' },
 		shadowFixed: { control: 'boolean' },
 	},
@@ -69,6 +73,13 @@ export const Default = {
 export const Radio = {
 	args: {
 		checked: true,
+	},
+};
+
+export const Inverted = {
+	args: {
+		checked: true,
+		styleVariant: 'inverted',
 	},
 };
 
