@@ -25,6 +25,7 @@ export const createSelect = ({
 	if (focusColorClass === 'default') focusColorClass = '';
 
 	const select = document.createElement('select');
+	select.disabled = disabled;
 
 	// Placeholder as the first option
 	const placeholderOption = document.createElement('option');

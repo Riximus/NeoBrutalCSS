@@ -1,13 +1,13 @@
-import { createTextInput } from './TextInput.js';
 import {
-	Title,
-	Subtitle,
+	Controls,
 	Description,
 	Primary,
-	Controls,
 	Stories,
+	Subtitle,
+	Title,
 } from '@storybook/blocks';
 import * as React from 'react';
+import { createTextArea } from './TextArea.js';
 import {
 	getAllColorClasses,
 	getHoverColorClasses,
@@ -15,7 +15,7 @@ import {
 } from '../../storybook-colors.js';
 
 export default {
-	title: 'Elements/Inputs/Text Input',
+	title: 'Elements/Inputs/Text Area',
 	tags: ['autodocs'],
 	parameters: {
 		docs: {
@@ -24,7 +24,7 @@ export default {
 					<Title />
 					<Subtitle></Subtitle>
 					<Description>
-						The **.neo-input-text** class is designed for styling text-based input
+						The **.neo-input-textarea** class is designed for styling text-based input
 						fields like text, search, number, password, email, and telephone.
 					</Description>
 					<Primary />
@@ -50,10 +50,6 @@ export default {
 		},
 		disabled: { control: 'boolean' },
 		error: { control: 'boolean' },
-		size: {
-			control: { type: 'select' },
-			options: ['default', 'small', 'large'],
-		},
 		shadow: { control: 'boolean' },
 		shadowFixed: { control: 'boolean' },
 		borderRadius: {
@@ -61,19 +57,19 @@ export default {
 			options: ['none', 'rounded', 'rounded-corners'],
 		},
 	},
-	render: (args) => createTextInput(args),
+	render: (args) => createTextArea(args),
 };
 
 export const Default = {
 	args: {
-		placeholder: 'Default Input',
+		placeholder: 'Default Text Area',
 	},
 };
 
 export const Colored = {
 	args: {
 		placeholder: 'Colored Input',
-		colorClass: 'neo-yellow',
+		colorClass: 'feedback-danger',
 	},
 };
 
@@ -130,19 +126,5 @@ export const Error = {
 	args: {
 		placeholder: 'Input with Error',
 		error: true,
-	},
-};
-
-export const Small = {
-	args: {
-		placeholder: 'Small Input',
-		size: 'small',
-	},
-};
-
-export const Large = {
-	args: {
-		placeholder: 'Large Input',
-		size: 'large',
 	},
 };
