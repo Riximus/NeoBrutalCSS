@@ -89,3 +89,4 @@ TODO.md
 .idea
 node_modules
 package-lock.json
+storybook-static

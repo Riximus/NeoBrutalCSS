@@ -127,8 +127,8 @@ $color-palette: (
 }
 
 @mixin border-and-text-color($color-value) {
-	border-color: $color-value !important;
-	color: set-text-color($color-value);
+	border-color: set-text-color($color-value) !important;
+	color: $color-value;
 }
 
 @mixin neo-checkbox-cross-style($color-value) {
@@ -152,6 +152,10 @@ $color-palette: (
 		.#{$palette-name}-#{$color-key}-hover:hover {
 			@include background-and-text-color($color-value);
 			@include neo-checkbox-cross-style($color-value);
+			&::before,
+			&::after {
+				background-color: $color-value !important;
+			}
 		}
 
 		// Checked color classes for each color
@@ -160,15 +164,17 @@ $color-palette: (
 			&::before {
 				@include border-and-text-color($color-value);
 			}
+			&::after {
+				@include border-and-text-color($color-value);
+			}
 			&.neo-radio-inverted::before,
 			&.neo-checkbox-inverted::before {
 				border-color: set-text-color($color-value) !important;
 				color: $color-value !important;
 			}
-			&::after {
-				@include border-and-text-color($color-value);
+			&.neo-checkbox-cross {
+				@include neo-checkbox-cross-style($color-value);
 			}
-			@include neo-checkbox-cross-style($color-value);
 		}
 		.#{$palette-name}-#{$color-key}-focus:focus {
 			outline: $outline-border $color-value !important;
@@ -197,13 +203,13 @@ $color-palette: (
 			&::before {
 				@include border-and-text-color($color-value);
 			}
+			&::after {
+				@include border-and-text-color($color-value);
+			}
 			&.neo-radio-inverted::before,
 			&.neo-checkbox-inverted::before {
 				border-color: set-text-color($color-value) !important;
 				color: $color-value !important;
-			}
-			&::after {
-				@include border-and-text-color($color-value);
 			}
 			@include neo-checkbox-cross-style($color-value);
 		}
