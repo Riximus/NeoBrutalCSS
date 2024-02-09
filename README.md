@@ -14,3 +14,11 @@ Welcome to the NeoBrutalCSS repository! This CSS framework is designed for creat
 - Flexible and customizable
 - Supports SCSS/SASS for advanced styling
 - Integrated with Storybook for component management
+
+Current Elements:
+- Buttons
+- Checkboxes
+- Radio Buttons
+- Selects
+- Textareas
+- Text Inputs
