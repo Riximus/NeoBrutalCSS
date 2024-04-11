@@ -3,6 +3,8 @@
 [![Lightningcss](https://img.shields.io/badge/⚡-LightningCSS-ffdd67)](https://lightningcss.dev/)
 [![SASS](https://img.shields.io/badge/SASS-bf4080)](https://sass-lang.com/)
 
+*Work in progress*
+
 # NeoBrutalism CSS
 
 Welcome to the NeoBrutalCSS repository! This CSS framework is designed for creating modern websites with a unique Neobrutalist aesthetic. Simple, yet flexible, it's perfect for designers and developers looking to add a striking and minimalist edge to their web projects.
