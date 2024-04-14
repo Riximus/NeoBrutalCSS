@@ -1,6 +1,6 @@
 {
   "name": "neobrutalcss",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "author": "Riximus",
   "description": "A simple and flexible CSS framework for building modern websites in the Neobrutalist style.",
   "repository": {
@@ -48,7 +48,8 @@
     "storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook --browsers firefox chromium webkit --no-cache",
     "watch:test-storybook": "test-storybook --watch",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prod:storybook": "npm run compile:sass && npm run build-storybook"
   },
   "license": "ISC",
   "type": "module",
